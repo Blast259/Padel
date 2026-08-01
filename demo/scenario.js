@@ -187,7 +187,8 @@ window.PADEL_SCENARIO = (function () {
     'Pista 4\n' +
     'Zamora - Loren\n' +
     'Marcos - Franco\n\n' +
-    'Ganadores suben ⬆️ · perdedores bajan ⬇️';
+    'Ganadores suben ⬆️ · perdedores bajan ⬇️\n' +
+    'A 6 juegos → ¡tiempo! · empate → punto de oro';
 
   /* Dagens två pass i denna grupp: 9:30 (tercera) + 11:00 (cuarta alta),
    * samma hall (fly = Padelfly). 11:00 utökad till 3 pistas som i verkligheten. */

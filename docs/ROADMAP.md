@@ -58,6 +58,11 @@ Flöde per pass:
    utrop.
 5. `sorteo` → banindelning som respekterar önskemål (bytesregister per spelare
    — "Machete spelar gärna med Gámez") → text till gruppen.
+   Ansvarsfördelningen från hans echaloasuerte-flöde bevaras: **paren är
+   Pacos hantverk** — boten föreslår par utifrån historik/önskemål, Paco
+   justerar, slumpen sätter bara startbanor. Rond 2 genereras enligt
+   vinnare-upp/förlorare-ner (fasta par; 6 gem/"¡tiempo!" eller tid med
+   punto de oro).
    **Multi-hall & passtyper:** varje pass bär hall + grupp — Paco driver tre
    grupper (Padelfly morgon, Padelfly kväll, Inmotions morgon/kväll) — och en
    passtyp: *pull* (8–16 platser, vinnarbana), *långpass* (2 h) eller

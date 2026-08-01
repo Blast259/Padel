@@ -111,6 +111,27 @@ själva listredigeringen — är hans tyngsta osynliga arbete. Demons akt 3 visa
 numera exakt detta: boten känner tillgängligheten och ställer Pacos egen fråga
 privat, efter hans "dale".
 
+## Vinnarbanan-reglerna (bekräftade av Tommy)
+
+- **Fasta par** hela passet — paret rör sig tillsammans, inga partnerbyten
+  (till skillnad från americano).
+- **Vinst** → paret flyttar upp en bana mot vinnarbanan; på vinnarbanan
+  försvarar man platsen. **Förlust** → ner en bana; på lägsta banan står man
+  kvar.
+- Matcherna spelas **först till 6 gem** — då ropar någon *"¡tiempo!"* och alla
+  roterar — alternativt på tid (10–12 min) med **punto de oro** vid oavgjort.
+- Demons rond 2-logik (paren består, vinnare upp/förlorare ner) är alltså
+  korrekt, och machetes resultatrapport "6-3" stämmer med gem-formatet.
+
+## Ekonomin (Tommys uppgifter)
+
+- Spelare betalar **~4 € per pass** (1,5 h: 9:30–11:00 eller 11:00–12:30).
+- Pacos andel är okänd; Tommys gissning **~1 €/spelare** — demons
+  resumé-exempel ("ej. 1 €/jugador") ligger alltså rätt.
+- Skalan: en fullbelagd sommardag (5–6 pass × 12–16 spelare över tre grupper)
+  omsätter flera hundra euro — varje ofyllt pass är direkt förlorad intäkt för
+  både hallen och Paco. Det är det ekonomiska argumentet för boten.
+
 ## Lottningsformatet (bekräftat — viktigt!)
 
 Pacos riktiga banindelning ser ut så här (citat):
@@ -134,6 +155,15 @@ Notera även kopplingen till bytesönskemålet i chatten ("Machete quería cambi
 a Patiño por Gamez") — lottningen hade parat Machete–Patiño, och machete ville
 ha Gámez: **efterlottnings-förhandlingar är ett verkligt moment** som botens
 önskemåls-respekterande sorteo eliminerar.
+
+**Mekaniken bakom (bekräftad med skärmdumpar på resultatsidan):** Paco matar
+in **färdiga par** i echaloasuerte.com ("Generación de grupos aleatorios" →
+"Grupos generados": *Emilio-Jaime*, *Rafa cortes-santi* …) — parbildningen är
+hans hantverk, byggt på kunskap och önskemål — och verktyget slumpar bara
+**vilken bana (Grupo 1–4) varje par startar på**. Resultatet delas som länk +
+skärmdump i gruppen. En bot ska bevara exakt den ansvarsfördelningen:
+**paren är Pacos, slumpen sätter bara startbanor** — och önskemål blir data i
+stället för efterförhandling.
 
 ## Pacos röst (frasinventarium ur datan)
 
@@ -197,8 +227,9 @@ platser, en bana). Mallar per passtyp, inte per organisatör.
    det står still.
 3. **Stängning** vid fullt; överskott → `Reservas`.
 4. **Avhopp:** reserv lyfts in manuellt (belagt fall: ola → José Luis).
-5. **Lottning:** pista-blocken postas (verktyg: echaloasuerte.com enligt
-   skärmdump); byten förhandlas efteråt.
+5. **Lottning:** Paco bildar paren för hand, matar in dem i echaloasuerte.com
+   som slumpar startbanor; pista-block/länk + skärmdump postas; byten
+   förhandlas efteråt.
 6. **Spel:** vinnarbanan. 7. **Repetera** — två pass/dag i denna grupp
    (9:30 + 11:00 på Padelfly), plus den andra hallens grupp.
 
@@ -220,11 +251,13 @@ framtida botfunktion ("reservas fylls på → föreslå en tredje pista"), och
 
 ## Kvarstående öppna frågor
 
-1. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
-   splittas de? Hur rapporteras resultat i praktiken?
-2. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
-   avbokning) och prislogiken (*"por el mismo precio"*).
+1. Bokningsflödet mot hallarna: när bokar/avbokar Paco banor, och kostar
+   avbokningar honom något?
 
-*(Löst 2026-08-01: ✅ sätts av Paco ensam vid säkrad/verifierad spelare,
-troligen via privat avstämning — Tommys uppgift. Löst tidigare: vem som
-underhåller listan, söndagsformatet, lottningsformatet.)*
+*(Löst 2026-08-01, samtliga via Tommy: listunderhållet — Paco ensam, via
+vidarebefordran; motorn — privata chattar + tillgänglighetsminne;
+✅-semantiken — Pacos verifieringsmarkör; söndagsformatet — hans eget
+långpass; lottningsformatet och -mekaniken — par för hand, slumpade
+startbanor; vinnarbanan-reglerna — fasta par, upp/ner, 6 gem/"¡tiempo!",
+punto de oro; ekonomin — ~4 €/spelare och pass, Pacos andel gissningsvis
+~1 €/spelare.)*
