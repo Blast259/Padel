@@ -46,6 +46,12 @@ Flöde per pass:
 3. Spelare som vill slippa gruppbruset kan skriva "yo" direkt till boten
    (numret sprids via gruppbeskrivningen/en fastnålad rad i listan). Turister
    får svar på sitt språk — botens NLU är flerspråkig (es/en/sv).
+   **Tillgänglighetsregister:** spelare säger till boten (eller Paco
+   vidarebefordrar) vilka dagar de kan — ett *"el domingo sí puedo"* räcker.
+   Saknas platser föreslår boten en privat utfrågningsrunda och skickar Pacos
+   egen fras (*"¿Puedes jugar mañana a las 9'30?"*) till lediga spelare efter
+   hans godkännande. Detta ersätter hans i särklass tyngsta moment i dag
+   (belagt i 1:1-chatten med Tommy).
 4. Avhopp → boten uppdaterar, lyfter reserva, ger Paco ny text + förslag på
    utrop.
 5. `sorteo` → banindelning som respekterar önskemål (bytesregister per spelare

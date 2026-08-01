@@ -71,6 +71,29 @@ versionen** in i gruppen. Konsekvens: *"1:1-sekreterare"-arkitekturen i
 ROADMAP.md matchar hans befintliga muskelminne exakt* — boten blir källan han
 vidarebefordrar ifrån, och gruppens yta förändras inte alls.
 
+## Nyckelfynd 2: motorn är privata chattar (1:1)
+
+Skärmdump av Pacos 1:1-chatt med Tommy (2026-07-31/08-01) visar hur spel
+faktiskt bemannas:
+
+- **Paco rekryterar aktivt privat:** *"Puedes jugar mañana a las 11'00?"*
+- **Spelare rapporterar tillgänglighet i samma tråd:** Tommy tackar nej till
+  lördagen men säger *"El domingo sí puedo jugar"* …
+- **… och Paco minns och agerar:** nästa morgon skriver han *"Te apunto para
+  mañana a las 9'00 hasta las 11'00 una pull en padelfly por el mismo precio
+  vale.."* — han skriver upp Tommy själv. `7 tommy` i söndagslistan kom alltså
+  ur 1:1-tråden; Tommy skrev aldrig något i gruppen.
+- Tommys vittnesmål: spelare brukar meddela Paco privat vilka dagar de är
+  tillgängliga — *"det blir väldigt mycket admin"*.
+- Notera även prisreferensen (*"por el mismo precio"*) — även betalfrågor bor
+  i 1:1-trådarna.
+
+**Slutsats:** Paco är listans enda redaktör, och han driver ett mentalt
+tillgänglighetsregister över ~520 medlemmar via en-och-en-chattar. Det — inte
+själva listredigeringen — är hans tyngsta osynliga arbete. Demons akt 3 visar
+numera exakt detta: boten känner tillgängligheten och ställer Pacos egen fråga
+privat, efter hans "dale".
+
 ## Lottningsformatet (bekräftat — viktigt!)
 
 Pacos riktiga banindelning ser ut så här (citat):
@@ -128,8 +151,11 @@ organisatör.
 ## Arbetsflödet idag (rekonstruerat, nu belagt)
 
 1. **Utrop** med dubbellistan (alla pass för dagen i ett meddelande).
-2. **Fyllnad:** namn tillkommer ett i taget; hela meddelandet repostas varje
-   gång; Paco ropar när det står still.
+2. **Fyllnad i två kanaler:** dels "yo" i gruppen, dels — själva motorn —
+   Pacos privata frågor till spelare han vet är lediga (*"Puedes jugar
+   mañana…?"*) och spelarnas inrapporterade tillgänglighet. Paco för själv in
+   namnen och vidarebefordrar den uppdaterade listan; han ropar i gruppen när
+   det står still.
 3. **Stängning** vid fullt; överskott → `Reservas`.
 4. **Avhopp:** reserv lyfts in manuellt (belagt fall: ola → José Luis).
 5. **Lottning:** pista-blocken postas (verktyg: echaloasuerte.com enligt
@@ -142,7 +168,7 @@ organisatör.
 | # | Smärta (belagd i datan) | I demon |
 |---|---|---|
 | 1 | Hela dubbellistan repostas för varje namn; korruption förekommer (`1.German/6.Vicki`) | "yo" → listan uppdaterar sig själv (akt 2) |
-| 2 | Paco ropar manuellt när det står still (7 varianter i datan) | Auto-nudge med hans literala fras (akt 3) |
+| 2 | Jaga platser: rop i gruppen + privata frågor en och en (*"Puedes jugar mañana a las 11'00?"*) och ett mentalt tillgänglighetsregister | Auto-nudge med hans fras + boten frågar lediga spelare privat efter Pacos «dale» (akt 3) |
 | 3 | Avhopp → manuellt reserva-upplyft (belagt: ola→José Luis) | Automatiskt upplyft (akt 4) |
 | 4 | Extern lottning + efterförhandlingar (Machete/Patiño/Gámez) | Sorteo i chatten, i hans pista-format, som respekterar önskemål (akt 5) |
 | 5 | Vinnarbanan-rotationen räknas för hand | Rond 2 genereras (akt 6) |
@@ -155,15 +181,11 @@ framtida botfunktion ("reservas fylls på → föreslå en tredje pista"), och
 
 ## Kvarstående öppna frågor
 
-1. **Hur hamnar ett namn i listan i praktiken?** Vidarebefordrings-fyndet
-   visar att Paco postar listupplagorna — men var redigerar han dem
-   (meddelande-till-sig-själv? anteckning?), och skriver spelarna "yo" i
-   gruppen varpå han för in dem, eller skickar de privat till honom?
-   *Tommy kan svara direkt — han skrev upp sig själv som `7 tommy` i
-   söndagslistan och vet hur det gick till.*
-2. **✅-semantiken:** självbekräftelse, Pacos verifiering eller betalning?
-   (Markören används i pull-listorna men inte i långpass-formatet.)
-3. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
+1. **✅-semantiken:** trolig hypotes efter 1:1-fyndet: namn *utan* ✅ är
+   sådana Paco fört in utan spelarens direkta bekräftelse (jfr Gamez), medan ✅
+   = bekräftad (i gruppen eller 1:1). Ännu obekräftat — och markören saknas i
+   långpass-formatet.
+2. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
    splittas de? Hur rapporteras resultat i praktiken?
-4. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
-   avbokning).
+3. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
+   avbokning) och prislogiken (*"por el mismo precio"*).

@@ -257,7 +257,20 @@ window.PADEL_SCENARIO = (function () {
     /* Pacos literala fras ur chatten (chic@s, 9'30, emoji-klustret) */
     { type: 'msg', from: 'bot', time: '21:15', typing: 1200, text:
       "Venga chic@s dos más para cerrar la pull de las 9'30 vamos 💪🏻🎾🎾💪🏻" },
-    { type: 'msg', from: 'franco', time: '21:18', text: 'yo' },
+
+    /* Pacos tyngsta osynliga jobb: fråga spelare privat, en och en
+     * ("Puedes jugar mañana a las 11'00?" — literal fras ur hans 1:1-chatt).
+     * Boten känner tillgängligheten och frågar åt honom — efter hans "dale". */
+    { type: 'caption', key: 'cap.outreach' },
+    { type: 'chat', id: 'botPaco', chain: true },
+    { type: 'msg', from: 'bot', time: '21:16', typing: 1400, text:
+      "Siguen faltando 2 para las 9'30 ⚠️\n" +
+      'Disponibles hoy: franco y pedro gomez\n' +
+      '¿Les pregunto en privado? («¿Puedes jugar mañana?»)' },
+    { type: 'msg', from: 'paco', time: '21:17', text: 'dale 👍' },
+    { type: 'caption', key: 'cap.outreachDone' },
+    { type: 'chat', id: 'group', chain: true },
+    { type: 'msg', from: 'franco', time: '21:18', text: 'yo', chain: true },
     { type: 'msg', from: 'pedrog', time: '21:19', text: 'yo✅', chain: true },
     { type: 'msg', from: 'juang', time: '21:20', text: 'yo' },
     { type: 'msg', from: 'pepej', time: '21:21', text: 'si hay hueco yo' },

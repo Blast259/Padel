@@ -39,7 +39,7 @@ källan som alltid har listan färdig, rätt och redo att vidarebefordras.
 |---|---|---|
 | 1 | `pull sabado 9'30 tercera fly 16` → färdig lista | En rad ersätter kvällens tangentarbete |
 | 2 | "yo" → listan växer själv; `apunta a gamez q me lo dijo x privado` funkar | Boten lyder *honom*, även hans stavning |
-| 3 | Boten ropar "Venga chic@s faltan 2…" | Hans egen röst, automatiserad — brukar ge skratt |
+| 3 | Boten ropar "Venga chic@s dos más…" i gruppen och frågar sedan — efter Pacos «dale» — lediga spelare privat med hans egen fras "¿Puedes jugar mañana?" | Hans röst OCH hans tyngsta osynliga jobb (de privata en-och-en-frågorna) automatiserade |
 | 4 | chichi hoppar av → Juan gonzalez in automatiskt | Morgonstressen som försvinner |
 | 5 | Sorteo direkt i chatten, med Machete/Gámez-bytet respekterat | **Killer-featuren** — han slipper echaloasuerte.com OCH gnället efter lottningen |
 | 6 | Rond 2 räknas ut (vinnare upp/förlorare ner) | Huvudräkningen på banan försvinner |
