@@ -55,8 +55,12 @@ Juan gonzalez
   `1.German/6.Vicki` och rad 6 tömts — listkorruption vid manuell redigering,
   synlig i Pacos eget vidarebefordrade meddelande (skärmdump). Starkaste
   beviset för smärtpunkt #1.
-- `✅` finns i lördagslistorna men **inte alls** i söndagslistan → markören är
-  formatberoende (se öppna frågor).
+- `✅` **sätts av Paco ensam** när en spelare är säkrad/verifierad — troligen
+  avstämt via privat chatt (Tommys uppgift; exakta mekaniken oklar även för
+  spelarna). Namn utan ✅ (jfr Gamez) = ännu inte verifierade. Markören används
+  i pull-listorna men inte i långpass-formatet. Botens demoregel — direkt svar
+  från spelaren ⇒ ✅, tredjepartsinskrivning ⇒ utan ✅ tills spelaren bekräftar
+  — speglar Pacos praxis och tar bort hans manuella avstämningsrunda.
 - **Reserva-upplyft händer på riktigt:** mellan två upplagor försvinner
   `2- ola✅` och första reserven *José Luis cañasveras* tar plats 2, varpå
   Reservas krymper. Precis det flöde demon automatiserar i akt 4.
@@ -181,11 +185,11 @@ framtida botfunktion ("reservas fylls på → föreslå en tredje pista"), och
 
 ## Kvarstående öppna frågor
 
-1. **✅-semantiken:** trolig hypotes efter 1:1-fyndet: namn *utan* ✅ är
-   sådana Paco fört in utan spelarens direkta bekräftelse (jfr Gamez), medan ✅
-   = bekräftad (i gruppen eller 1:1). Ännu obekräftat — och markören saknas i
-   långpass-formatet.
-2. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
+1. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
    splittas de? Hur rapporteras resultat i praktiken?
-3. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
+2. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
    avbokning) och prislogiken (*"por el mismo precio"*).
+
+*(Löst 2026-08-01: ✅ sätts av Paco ensam vid säkrad/verifierad spelare,
+troligen via privat avstämning — Tommys uppgift. Löst tidigare: vem som
+underhåller listan, söndagsformatet, lottningsformatet.)*

@@ -51,7 +51,9 @@ Flöde per pass:
    Saknas platser föreslår boten en privat utfrågningsrunda och skickar Pacos
    egen fras (*"¿Puedes jugar mañana a las 9'30?"*) till lediga spelare efter
    hans godkännande. Detta ersätter hans i särklass tyngsta moment i dag
-   (belagt i 1:1-chatten med Tommy).
+   (belagt i 1:1-chatten med Tommy). ✅-markören sätter boten automatiskt när
+   spelaren själv bekräftat (i grupp eller 1:1) — det ersätter Pacos manuella
+   verifieringsrunda, som idag är han ensam om (Tommys uppgift).
 4. Avhopp → boten uppdaterar, lyfter reserva, ger Paco ny text + förslag på
    utrop.
 5. `sorteo` → banindelning som respekterar önskemål (bytesregister per spelare
