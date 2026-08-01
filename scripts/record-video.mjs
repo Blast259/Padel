@@ -20,6 +20,7 @@ const OUT = join(ROOT, 'out');
 const VIDEOS = join(ROOT, 'videos');
 const LANGS = (process.env.LANGS || 'es,sv').split(',').map(s => s.trim()).filter(Boolean);
 const SPEED = parseFloat(process.env.RECORD_SPEED || '1') || 1;
+const CRF = process.env.RECORD_CRF || '26'; // ~<10 MB för 3 min UI-video; sänk för högre kvalitet
 const SIZE = { width: 1080, height: 2340 };
 
 const { chromium } = await loadPlaywright();
@@ -54,7 +55,7 @@ for (const lang of LANGS) {
   if (ffmpeg) {
     const mp4Path = join(VIDEOS, `demo-${lang}.mp4`);
     const args = ['-y', '-i', webmPath, '-c:v', 'libx264', '-pix_fmt', 'yuv420p',
-      '-crf', '21', '-preset', 'medium', '-movflags', '+faststart', '-an', mp4Path];
+      '-crf', CRF, '-preset', 'medium', '-movflags', '+faststart', '-an', mp4Path];
     const res = spawnSync(ffmpeg, args, { stdio: ['ignore', 'ignore', 'pipe'], encoding: 'utf8' });
     if (res.status !== 0) {
       console.error(`✗ ffmpeg misslyckades för [${lang}]:\n${(res.stderr || '').slice(-2000)}`);
@@ -69,7 +70,7 @@ for (const lang of LANGS) {
     copyFileSync(webmPath, keep);
     rmSync(tmpDir, { recursive: true, force: true });
     console.log(`⚠ Behöll ${keep} — konvertera själv med:\n` +
-      `  ffmpeg -y -i ${keep} -c:v libx264 -pix_fmt yuv420p -crf 21 ` +
+      `  ffmpeg -y -i ${keep} -c:v libx264 -pix_fmt yuv420p -crf ${CRF} ` +
       `-preset medium -movflags +faststart -an videos/demo-${lang}.mp4`);
   }
 }
