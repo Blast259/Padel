@@ -57,6 +57,12 @@ Flöde per pass:
 Det matchar också spelarnas invändning ("Paco har sitt eget sätt") — ingenting
 i gruppens yta förändras utom att listorna alltid stämmer.
 
+**Belägg ur chatten (2026-08-01):** Pacos listposter är märkta
+*"Vidarebefordrat"* — han underhåller redan listan någon annanstans och
+vidarebefordrar den uppdaterade versionen in i gruppen. 1:1-sekreteraren
+ändrar alltså inte hans beteende över huvud taget; den byter bara ut källan
+han vidarebefordrar ifrån mot en som alltid har listan färdig och korrekt.
+
 ### Steg 2 (om Paco vill mer)
 
 - **Knappar/listor i 1:1** (interaktiva meddelanden i Cloud API) för "yo",

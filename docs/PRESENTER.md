@@ -28,6 +28,11 @@ format, hans egna fraser och hans spelares riktiga smeknamn.
 Räck honom telefonen och låt **honom** trycka sig framåt. Demon är byggd för
 det: varje tryck = nästa händelse.
 
+**Bonuskort om han tvekar:** hans egna listposter är redan märkta
+*Vidarebefordrat* — han vidarebefordrar färdiga listmeddelanden in i gruppen
+idag. Assistenten ändrar inte det beteendet med ett kommatecken: den blir bara
+källan som alltid har listan färdig, rätt och redo att vidarebefordras.
+
 ## Ögonblicken att låta landa (i ordning)
 
 | Akt | Vad som händer | Varför det träffar Paco |

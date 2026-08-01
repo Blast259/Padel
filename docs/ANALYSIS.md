@@ -52,13 +52,24 @@ Juan gonzalez
   över.
 - Ojämn numrering (`1-`, `2 `, `4patiño`, `6 - ale`) — handredigering i mobil.
 - **Handhavandefel förekommer:** i en upplaga har rad 1 blivit
-  `1.German/6.Vicki` och rad 6 tömts — listkorruption vid manuell redigering.
-  Starkaste beviset för smärtpunkt #1.
+  `1.German/6.Vicki` och rad 6 tömts — listkorruption vid manuell redigering,
+  synlig i Pacos eget vidarebefordrade meddelande (skärmdump). Starkaste
+  beviset för smärtpunkt #1.
 - `✅` finns i lördagslistorna men **inte alls** i söndagslistan → markören är
   formatberoende (se öppna frågor).
 - **Reserva-upplyft händer på riktigt:** mellan två upplagor försvinner
   `2- ola✅` och första reserven *José Luis cañasveras* tar plats 2, varpå
   Reservas krymper. Precis det flöde demon automatiserar i akt 4.
+
+## Nyckelfynd: listorna vidarebefordras in i gruppen
+
+Skärmdump (2026-08-01 19:53) visar söndagslistan postad av Paco själv
+(~pacoberenguer) och **märkt "Vidarebefordrat"**, i två upplagor (12:40 och
+14:36) där enbart nya namn skiljer. Paco underhåller alltså listan någon
+annanstans (annan chatt/anteckning) och **vidarebefordrar den uppdaterade
+versionen** in i gruppen. Konsekvens: *"1:1-sekreterare"-arkitekturen i
+ROADMAP.md matchar hans befintliga muskelminne exakt* — boten blir källan han
+vidarebefordrar ifrån, och gruppens yta förändras inte alls.
 
 ## Lottningsformatet (bekräftat — viktigt!)
 
@@ -94,9 +105,7 @@ ha Gámez: **efterlottnings-förhandlingar är ett verkligt moment** som botens
 - Mönster: **"Venga/Vamos" + antal som saknas + tid + framåtdriv**, ofta med
   💪🏻🎾. Botens nudge i demon använder numera den literala frasen.
 
-## Andra format i samma grupp
-
-Söndagspasset ser annorlunda ut:
+## Söndagsformatet: sällsynt 2-timmarspass (fråga löst)
 
 ```
 Domingo
@@ -108,11 +117,13 @@ Reserva
 JOSÉ LUIS 🇪🇸
 ```
 
-Punktnumrering (`1.German`), tidsintervall i stället för starttid, `Reserva` i
-singular, versal reserv med flagga, ingen nivårad och inga ✅. Trolig
-förklaring: annan organisatör eller annat passformat (öppet 2-timmarspass).
-→ En riktig bot måste antingen låsas till Pacos pull-format eller lära sig
-flera mallar per organisatör.
+Tommy bekräftar: söndagen är ett **enda långt pass 9.00–11.00** (ovanligt men
+det händer) i stället för dagens normala två pull-pass — och skärmdumpen visar
+att listan postas av **Paco själv**. Samma organisatör använder alltså olika
+mallar per *passtyp*: punktnumrering (`1.German`), tidsintervall i stället för
+starttid, `Reserva` i singular, versal reserv med 🇪🇸, ingen nivårad, inga ✅.
+→ En riktig bot behöver mallar per passtyp (pull resp. långpass), inte per
+organisatör.
 
 ## Arbetsflödet idag (rekonstruerat, nu belagt)
 
@@ -144,16 +155,15 @@ framtida botfunktion ("reservas fylls på → föreslå en tredje pista"), och
 
 ## Kvarstående öppna frågor
 
-1. **Vem redigerar listan idag?** Kopiedatan saknar avsändare. Indicier
-   (en-rad-i-taget-tillväxt + korruptionsfelet) pekar mot att spelarna själva
-   kopierar och lägger till sig, men Paco kan också vara den som reposterar.
+1. **Hur hamnar ett namn i listan i praktiken?** Vidarebefordrings-fyndet
+   visar att Paco postar listupplagorna — men var redigerar han dem
+   (meddelande-till-sig-själv? anteckning?), och skriver spelarna "yo" i
+   gruppen varpå han för in dem, eller skickar de privat till honom?
    *Tommy kan svara direkt — han skrev upp sig själv som `7 tommy` i
-   söndagslistan.*
+   söndagslistan och vet hur det gick till.*
 2. **✅-semantiken:** självbekräftelse, Pacos verifiering eller betalning?
-   (Och varför saknas ✅ helt i söndagsformatet?)
-3. **Är söndagspasset en annan organisatör?** Påverkar hur många mallar en
-   riktig bot behöver.
-4. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
+   (Markören används i pull-listorna men inte i långpass-formatet.)
+3. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
    splittas de? Hur rapporteras resultat i praktiken?
-5. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
+4. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
    avbokning).

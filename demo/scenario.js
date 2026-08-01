@@ -199,7 +199,7 @@ window.PADEL_SCENARIO = (function () {
     '👥 Jugadores hoy: 28\n' +
     '🆕 Nuevos: 2 (John 🇬🇧, Tommy 🇸🇪)\n' +
     '💶 Comisión estimada: 28 € (ej. 1 €/jugador)\n\n' +
-    '📅 Domingo 9:30 — 16/16 🔒\n\n' +
+    '📅 Domingo 9.00 a 11.00 — 16/16 🔒\n\n' +
     'Buenas noches jefe 😴';
 
   var beats = [
@@ -307,10 +307,10 @@ window.PADEL_SCENARIO = (function () {
     { type: 'msg', from: 'john', time: '17:05', text:
       "Hi! I'm in Torre del Mar this week. Any padel tomorrow? Level 3-ish 😅" },
     { type: 'msg', from: 'bot', time: '17:05', typing: 1400, text:
-      'Hey John! 🎾 Yes — pull tomorrow (Sunday) 9:30, nivel tercera, at Padelfly.\n2 spots left. Want in?' },
+      'Hey John! 🎾 Yes — special one tomorrow (Sunday): 9.00 to 11.00, one long session at Padelfly.\n2 spots left. Want in?' },
     { type: 'msg', from: 'john', time: '17:06', text: 'Yes please!' },
     { type: 'msg', from: 'bot', time: '17:06', text:
-      "Done ✅ You're nº 15.\n📍 Padelfly, Torre del Mar\n⏰ Be there 9:20. ¡Hasta mañana!" },
+      "Done ✅ You're nº 15.\n📍 Padelfly, Torre del Mar\n⏰ Be there 8:50. ¡Hasta mañana!" },
 
     { type: 'caption', key: 'cap.tommy' },
     { type: 'chat', id: 'botTommy', chain: true },
@@ -318,10 +318,10 @@ window.PADEL_SCENARIO = (function () {
     { type: 'msg', from: 'tommy', time: '17:41', text:
       'Hej! Jag är i Torre del Mar med familjen. Finns det padel imorgon? Nivå 3–4 🇸🇪' },
     { type: 'msg', from: 'bot', time: '17:41', typing: 1400, text:
-      'Hej Tommy! 🎾 Absolut — imorgon (söndag) 9:30, nivel tercera på Padelfly.\nSista platsen — ska jag skriva upp dig?' },
+      'Hej Tommy! 🎾 Absolut — imorgon (söndag) är det ett långt pass: 9.00–11.00 på Padelfly.\nSista platsen — ska jag skriva upp dig?' },
     { type: 'msg', from: 'tommy', time: '17:42', text: 'Ja tack! 🙌' },
     { type: 'msg', from: 'bot', time: '17:42', text:
-      'Klart ✅ Du är nº 16.\n📍 Padelfly, Torre del Mar\n⏰ Kom 9:20. ¡Bienvenido! 🇸🇪🤝🇪🇸' },
+      'Klart ✅ Du är nº 16.\n📍 Padelfly, Torre del Mar\n⏰ Kom 8:50. ¡Bienvenido! 🇸🇪🤝🇪🇸' },
     { type: 'caption', key: 'cap.touristWhy' },
     { type: 'pause', ms: 2000 },
 
