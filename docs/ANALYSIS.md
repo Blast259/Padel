@@ -15,16 +15,18 @@
 - **Organisatör:** Paco. Han skapar spelen, jagar spelare, parar ihop, bokar
   banor på två hallar (**Padelfly**/"fly") och får en slant per organiserat
   spel → han vill maximera antalet fyllda pass.
-- **Kanal:** WhatsApp, en grupp per hall. Huvudgruppen (*PULL MAÑANERAS DE
-  3ª*, ~520 medlemmar) täcker **Padelfly** — "fly" och "padelfly" i listorna
-  är samma hall — med dagens två pass: **9:30 (tercera)** och **11:00 (cuarta
-  alta)**; därav dubbellistan i ett och samma meddelande *(bekräftat av
-  Tommy)*. Den andra gruppen, **"Pull&partidos inmotions"**, täcker den
-  närliggande hallen **Inmotions** där Paco kör både morgon- och kvällsspel
-  (pulls *och* vanliga partidos). Skärmdump därifrån visar **exakt samma
-  pull-mall** (`Lugar inmotions`, `Nivel cuarta alta`, 12 platser = 3 banor,
-  alla ✅) — formatet är alltså portabelt över hallar, och Pacos verkliga
-  dagsvolym spänner över båda grupperna. Paco skickar även servicemeddelanden ("festivalen
+- **Kanal:** WhatsApp — **tre grupper** (alla drivna av Paco, samma nummer):
+  1. *PULL MAÑANERAS DE 3ª* (~520 medl.) — **Padelfly morgon**: 9:30
+     (tercera) + 11:00 (cuarta alta) i ett dubbelmeddelande *(bekräftat av
+     Tommy; "fly" = "padelfly" = samma hall)*.
+  2. *PULL Y PARTIDOS PADELFLY* (~505 medl.) — **Padelfly kväll**: pull
+     19'30 (12 platser = 3 banor) + **partido 21'00 (4 platser = en bana)**;
+     nivåspann som *"cuarta alta tercera baja"*.
+  3. *Pull&partidos inmotions* — grannhallen **Inmotions**, morgon *och*
+     kväll; skärmdump visar exakt samma pull-mall (12 platser, cuarta alta,
+     alla ✅) → mallarna är portabla över hallar.
+  Sammantaget: uppemot 5–6 pass per dag över tre grupper med ~1 500
+  medlemskap (med överlapp) — det är skalan på Pacos dagliga admin. Paco skickar även servicemeddelanden ("festivalen
   ikväll, vägen från El Ingenio till Aldi är avstängd — ta andra vägar") och
   hälsar nya välkomna personligen: *"Bienvenido al grupo pepe"*.
 - **Spelform:** "pull" = vinnarbanan. 16 platser = 4 banor, 8 = 2 banor —
@@ -160,8 +162,30 @@ det händer) i stället för dagens normala två pull-pass — och skärmdumpen 
 att listan postas av **Paco själv**. Samma organisatör använder alltså olika
 mallar per *passtyp*: punktnumrering (`1.German`), tidsintervall i stället för
 starttid, `Reserva` i singular, versal reserv med 🇪🇸, ingen nivårad, inga ✅.
-→ En riktig bot behöver mallar per passtyp (pull resp. långpass), inte per
-organisatör.
+
+## Passtyp 3: partido (en bana, 4 platser)
+
+Kvällsgruppen visar även formatet för vanliga matcher:
+
+```
+Partido jueves
+Hora 21'00
+Lugar padelfly
+Nivel cuarta alta tercera baja
+.1-
+2-
+3-
+4-
+Reservas
+```
+
+Fyra platser = en bana, ingen vinnarbana. Nivå anges ibland som spann
+(*"cuarta alta tercera baja"*) och kan hamna på Lugar-raden — mallarna är
+levande, inte strikta.
+
+**Summering — passtyper en bot behöver:** **pull** (8–16 platser, vinnarbana,
+flexibel storlek), **långpass** (2 h, punktnumrering), **partido** (4
+platser, en bana). Mallar per passtyp, inte per organisatör.
 
 ## Arbetsflödet idag (rekonstruerat, nu belagt)
 
