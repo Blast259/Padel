@@ -1,0 +1,371 @@
+/* Asistente de Paco — WhatsApp-trogen styling (Android, ljust tema)
+ * Allt är rem-baserat. I porträttläge (mobil / inspelning 1080×2340) skalar
+ * roten med viewportbredden så att raster-pixlar == CSS-pixlar → skarp video.
+ * Inga externa resurser: bakgrundsdoodlen är en inline-SVG-data-URI.
+ */
+
+:root {
+  --wa-header: #008069;
+  --wa-header-text: #ffffff;
+  --wa-bg: #efeae2;
+  --wa-out: #d9fdd3;
+  --wa-in: #ffffff;
+  --wa-text: #111b21;
+  --wa-meta: #667781;
+  --wa-tick: #8696a0;
+  --wa-tick-blue: #53bdeb;
+  --wa-system: #54656f;
+  --wa-e2e-bg: #fff5c4;
+  --wa-accent: #00a884;
+  --wa-composer-bg: #f0f2f5;
+  --shadow-msg: 0 1px .5px rgba(11, 20, 26, .13);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    'Liberation Sans', Arial, sans-serif, 'Noto Color Emoji';
+}
+
+body {
+  background: #0b141a;
+  color: var(--wa-text);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#phone {
+  position: relative;
+  width: 24.375rem;              /* 390px @ 16px rot */
+  height: 52.75rem;              /* 844px */
+  max-height: 100vh;
+  max-height: 100dvh;
+  background: var(--wa-bg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 0 .6rem #1f2c34, 0 1.5rem 4rem rgba(0, 0, 0, .6);
+  border-radius: 1.4rem;
+}
+
+/* Porträtt (riktig mobil eller inspelnings-viewport): fyll allt, skala roten */
+@media (orientation: portrait) {
+  html { font-size: calc(100vw / 24.375); }
+  #stage { align-items: stretch; justify-content: stretch; }
+  #phone {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* ── Statusbar ─────────────────────────────────────────── */
+#statusbar {
+  flex: none;
+  height: 1.7rem;
+  background: var(--wa-header);
+  color: var(--wa-header-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 .9rem 0 1.1rem;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+#statusbar .sb-icons { display: flex; align-items: center; gap: .3rem; }
+#statusbar svg { display: block; height: .7rem; width: auto; fill: currentColor; }
+#statusbar .sb-4g { font-size: .6rem; font-weight: 700; letter-spacing: 0; }
+
+/* ── Chatt-header ──────────────────────────────────────── */
+#chat-header {
+  flex: none;
+  height: 3.5rem;
+  background: var(--wa-header);
+  color: var(--wa-header-text);
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem 0 .35rem;
+  gap: .45rem;
+  z-index: 5;
+}
+.hdr-back { display: flex; align-items: center; padding: .3rem .1rem; }
+.hdr-back svg { height: 1.3rem; width: auto; fill: currentColor; }
+.hdr-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  background: #6b7c85;
+  overflow: hidden;
+}
+.hdr-text { flex: 1; min-width: 0; line-height: 1.25; }
+#hdr-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#hdr-sub {
+  font-size: .78rem;
+  opacity: .92;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hdr-icons { display: flex; align-items: center; gap: 1.15rem; padding-right: .45rem; }
+.hdr-icons svg { height: 1.25rem; width: auto; fill: currentColor; }
+
+/* ── Chattytor + tapet ─────────────────────────────────── */
+#screens { flex: 1; position: relative; min-height: 0; }
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: .5rem .75rem 1rem;
+  display: none;
+  scrollbar-width: none;
+  background-color: var(--wa-bg);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'><g fill='none' stroke='%23d9d0c5' stroke-width='2' opacity='.55'><circle cx='30' cy='34' r='7'/><path d='M70 20q8 8 0 16'/><ellipse cx='130' cy='40' rx='10' ry='16' transform='rotate(28 130 40)'/><path d='M126 54l8 14'/><circle cx='200' cy='30' r='5'/><path d='M240 60l6 6m0-6l-6 6'/><path d='M30 110c6-6 12 6 18 0'/><circle cx='90' cy='120' r='8'/><path d='M150 110l5 10 10 2-8 7 2 10-9-5-9 5 2-10-8-7 10-2z'/><circle cx='220' cy='120' r='9'/><path d='M40 190q10-12 20 0'/><ellipse cx='110' cy='200' rx='9' ry='14' transform='rotate(-24 110 200)'/><path d='M114 214l6 12'/><circle cx='170' cy='190' r='6'/><path d='M210 200c8-6 16 6 24 0'/><circle cx='60' cy='245' r='5'/><path d='M130 240l6 6m0-6l-6 6'/><circle cx='200' cy='248' r='7'/></g></svg>");
+  background-size: 16.25rem 16.25rem;
+}
+.screen::-webkit-scrollbar { display: none; }
+.screen.active { display: block; }
+/* när caption-baren visas: skjut upp innehållet så inget skyms */
+body.has-caption .screen { padding-bottom: 7.6rem; }
+body.record.has-caption .screen { padding-bottom: 8.6rem; }
+
+/* ── Pills (datum, E2E) ───────────────────────────────── */
+.pill-row { display: flex; justify-content: center; margin: .45rem 0; }
+.pill {
+  max-width: 88%;
+  background: #fff;
+  color: var(--wa-system);
+  font-size: .72rem;
+  padding: .32rem .75rem;
+  border-radius: .5rem;
+  box-shadow: var(--shadow-msg);
+  text-align: center;
+}
+.pill--date { text-transform: none; font-weight: 500; }
+.pill--e2e { background: var(--wa-e2e-bg); line-height: 1.35; }
+
+/* ── Meddelandebubblor ────────────────────────────────── */
+.msg-row { display: flex; margin: .11rem 0; padding: 0 .35rem; }
+.msg-row.out { justify-content: flex-end; }
+.msg-row.first { margin-top: .5rem; }
+
+.msg {
+  position: relative;
+  max-width: 85%;
+  background: var(--wa-in);
+  border-radius: .5rem;
+  box-shadow: var(--shadow-msg);
+  padding: .3rem .45rem .32rem .55rem;
+  font-size: .92rem;
+  line-height: 1.32;
+}
+.msg-row.out .msg { background: var(--wa-out); }
+
+/* svans på första bubblan i en svit */
+.msg-row.first .msg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: .55rem solid;
+  border-top-color: inherit;
+}
+.msg-row.first.in .msg::before {
+  left: -.5rem;
+  border-top-color: var(--wa-in);
+  border-left: .55rem solid transparent;
+}
+.msg-row.first.out .msg::before {
+  right: -.5rem;
+  border-top-color: var(--wa-out);
+  border-right: .55rem solid transparent;
+}
+.msg-row.first.in .msg { border-top-left-radius: 0; }
+.msg-row.first.out .msg { border-top-right-radius: 0; }
+
+.msg-sender {
+  font-size: .8rem;
+  font-weight: 700;
+  margin-bottom: .1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.msg-text { white-space: pre-wrap; word-wrap: break-word; }
+.msg-text .meta-spacer { display: inline-block; width: 4.2em; height: .55em; }
+.msg-row.in .msg-text .meta-spacer { width: 3em; }
+
+.msg-meta {
+  position: absolute;
+  right: .45rem;
+  bottom: .22rem;
+  display: flex;
+  align-items: center;
+  gap: .18rem;
+  font-size: .68rem;
+  color: var(--wa-meta);
+  line-height: 1;
+}
+.ticks svg { display: block; height: .72rem; width: auto; }
+.ticks .t2 { visibility: hidden; }
+.ticks { color: var(--wa-tick); }
+.ticks.sent .t2 { visibility: hidden; }
+.ticks.delivered .t2, .ticks.read .t2 { visibility: visible; }
+.ticks.read { color: var(--wa-tick-blue); }
+
+/* ── Composer ─────────────────────────────────────────── */
+#composer {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .5rem .55rem;
+  background: transparent;
+}
+.composer-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: .55rem .8rem;
+  color: #8696a0;
+  font-size: .95rem;
+  box-shadow: var(--shadow-msg);
+}
+.composer-field svg { height: 1.25rem; width: auto; fill: #8696a0; flex: none; }
+.composer-field .ph { flex: 1; white-space: nowrap; overflow: hidden; }
+.mic-btn {
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--wa-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-msg);
+}
+.mic-btn svg { height: 1.25rem; width: auto; fill: #fff; }
+
+/* ── Caption-bar (berättartext) ───────────────────────── */
+#caption-bar {
+  position: absolute;
+  left: .6rem;
+  right: .6rem;
+  bottom: 4.3rem;
+  z-index: 8;
+  background: rgba(11, 20, 26, .85);
+  color: #fff;
+  border-radius: .7rem;
+  padding: .6rem .85rem;
+  font-size: .88rem;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(.4rem);
+  transition: opacity .35s ease, transform .35s ease;
+  pointer-events: none;
+}
+#caption-bar.show { opacity: 1; transform: translateY(0); }
+.record #caption-bar { font-size: 1.02rem; padding: .8rem 1rem; bottom: 4.6rem; }
+
+/* ── Aktkort / slutkort ───────────────────────────────── */
+#act-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(11, 20, 26, .97);
+  color: #f2f6f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 2rem 1.6rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .45s ease;
+}
+#act-overlay.show { opacity: 1; pointer-events: auto; }
+#act-text {
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+#act-hint { font-size: .85rem; color: #8696a0; }
+#act-overlay .act-logo { font-size: 2.6rem; }
+
+/* ── HUD (språk + omstart + hint) ─────────────────────── */
+#hud {
+  position: absolute;
+  top: 5.6rem;
+  right: .5rem;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  align-items: flex-end;
+}
+.hud-chip {
+  border: none;
+  font: inherit;
+  font-size: .74rem;
+  font-weight: 700;
+  padding: .32rem .55rem;
+  border-radius: 1rem;
+  background: rgba(11, 20, 26, .55);
+  color: #fff;
+  cursor: pointer;
+  opacity: .9;
+}
+.hud-chip.active { background: var(--wa-accent); opacity: 1; }
+#tap-hint {
+  position: absolute;
+  bottom: 4.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  background: rgba(11, 20, 26, .55);
+  color: #fff;
+  font-size: .78rem;
+  padding: .35rem .8rem;
+  border-radius: 1rem;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+#tap-hint.hidden, #caption-bar.hidden { opacity: 0; }
+.record #hud, .record #tap-hint { display: none; }

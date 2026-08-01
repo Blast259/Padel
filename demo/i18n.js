@@ -1,0 +1,122 @@
+/* Asistente de Paco — i18n
+ * ui.*    = gränssnitts-chrome (header, composer, etiketter)
+ * cap.*   = berättar-captions (videons "speakertext")
+ * title.* = aktkort (fullskärmsoverlay)
+ * Chattinnehållet i scenario.js översätts INTE — det är Pacos grupp och är
+ * spanska by design (utom turist-beatsen som är EN/SV med flit).
+ */
+window.PADEL_I18N = {
+  es: {
+    'ui.members': '523 miembros',
+    'ui.online': 'en línea',
+    'ui.typing': 'escribiendo…',
+    'ui.typingName': '{name} está escribiendo…',
+    'ui.placeholder': 'Mensaje',
+    'ui.e2e': '🔒 Los mensajes y las llamadas están cifrados de extremo a extremo. Nadie fuera de este chat puede leerlos ni escucharlos.',
+    'ui.device': '📱 móvil de {name}',
+    'ui.tapHint': 'Toca para avanzar ▸',
+    'ui.restart': 'Reiniciar',
+    'ui.tapToContinue': 'toca para continuar',
+
+    'title.intro': '¿Y si Paco tuviera un asistente…\n\n…sin salir de WhatsApp? 🎾',
+    'title.tourist': 'Mientras tanto…\nun turista escribe al asistente 🌍',
+    'title.end': 'Todo esto…\nsin salir de WhatsApp. 🎾\n\nHecho con cariño para Paco 🇪🇸\n— Tommy 🇸🇪\n\n· demo privada · no afiliada a WhatsApp ·',
+
+    'cap.create': 'Paco crea la pull de mañana con UN solo mensaje.',
+    'cap.group': 'El asistente la publica en el grupo — con el formato de Paco de siempre.',
+    'cap.yo': 'Para apuntarse basta con escribir «yo». La lista se actualiza sola.',
+    'cap.obey': 'Paco manda como siempre — el asistente obedece. Sin ✅ = sin confirmar.',
+    'cap.pain': 'Hoy: reescribir la lista entera con cada cambio. Ahora: un «yo» y listo.',
+    'cap.later': 'Un par de horas después… 14 de 16. Nadie ha tenido que reescribir nada.',
+    'cap.nudge': 'Faltan 2 → el asistente avisa solo… con las palabras de Paco.',
+    'cap.closed': 'Completa. Lista cerrada, reservas en orden. Automático.',
+    'cap.drop': 'Sábado por la mañana: una baja de última hora…',
+    'cap.promote': '…y el primer reserva entra solo. Nadie se queda fuera por un despiste.',
+    'cap.human': 'El asistente lleva la logística. Paco pone el alma.',
+    'cap.swap': 'Los cambios se piden como siempre: hablando con Paco.',
+    'cap.sorteo': 'Antes: echaloasuerte.com y pegar el enlace. Ahora: sorteo al instante — y respeta los cambios pedidos.',
+    'cap.results': 'Terminan los partidos y los ganadores cantan resultado…',
+    'cap.round2': '…y la ronda 2 se calcula sola: el que gana sube ⬆️ el que pierde baja ⬇️',
+    'cap.johnIntro': 'Un turista inglés escribe al asistente. Sin grupo, sin líos.',
+    'cap.tommy': 'Y también funciona en sueco… 🇸🇪',
+    'cap.touristWhy': 'Torre del Mar vive del turismo: el asistente habla el idioma del jugador — Paco no pierde a nadie.',
+    'cap.summary': 'Al final del día, Paco recibe SU resumen privado.',
+    'cap.end': 'Paco sigue siendo el jefe. El asistente solo le quita el trabajo pesado.'
+  },
+
+  en: {
+    'ui.members': '523 members',
+    'ui.online': 'online',
+    'ui.typing': 'typing…',
+    'ui.typingName': '{name} is typing…',
+    'ui.placeholder': 'Message',
+    'ui.e2e': '🔒 Messages and calls are end-to-end encrypted. No one outside of this chat can read or listen to them.',
+    'ui.device': "📱 {name}'s phone",
+    'ui.tapHint': 'Tap to advance ▸',
+    'ui.restart': 'Restart',
+    'ui.tapToContinue': 'tap to continue',
+
+    'title.intro': 'What if Paco had an assistant…\n\n…without leaving WhatsApp? 🎾',
+    'title.tourist': 'Meanwhile…\na tourist messages the assistant 🌍',
+    'title.end': 'All of this…\nwithout leaving WhatsApp. 🎾\n\nMade with love for Paco 🇪🇸\n— Tommy 🇸🇪\n\n· private demo · not affiliated with WhatsApp ·',
+
+    'cap.create': 'Paco creates tomorrow’s pull with ONE single message.',
+    'cap.group': 'The assistant posts it in the group — in Paco’s usual format.',
+    'cap.yo': 'To sign up, just type “yo”. The list updates itself.',
+    'cap.obey': 'Paco is in charge, as always — the assistant obeys. No ✅ = not confirmed.',
+    'cap.pain': 'Today: retyping the whole list on every change. Now: one “yo” and done.',
+    'cap.later': 'A couple of hours later… 14 of 16. Nobody had to retype anything.',
+    'cap.nudge': '2 spots left → the assistant nudges by itself… in Paco’s own words.',
+    'cap.closed': 'Full. List closed, waitlist in order. Automatic.',
+    'cap.drop': 'Saturday morning: a last-minute dropout…',
+    'cap.promote': '…and the first reserve steps in automatically. Nobody misses out.',
+    'cap.human': 'The assistant handles the logistics. Paco brings the soul.',
+    'cap.swap': 'Swaps are requested the same way as always: by talking to Paco.',
+    'cap.sorteo': 'Before: echaloasuerte.com and pasting the link. Now: instant draw — respecting requested pairings.',
+    'cap.results': 'Matches finish and the winners report the results…',
+    'cap.round2': '…and round 2 computes itself: winners move up ⬆️ losers move down ⬇️',
+    'cap.johnIntro': 'An English tourist messages the assistant. No group needed, no hassle.',
+    'cap.tommy': 'And it works in Swedish too… 🇸🇪',
+    'cap.touristWhy': 'Torre del Mar lives on tourism: the assistant speaks the player’s language — Paco never loses a player.',
+    'cap.summary': 'At the end of the day, Paco gets HIS private summary.',
+    'cap.end': 'Paco stays the boss. The assistant just takes away the heavy lifting.'
+  },
+
+  sv: {
+    'ui.members': '523 medlemmar',
+    'ui.online': 'online',
+    'ui.typing': 'skriver…',
+    'ui.typingName': '{name} skriver…',
+    'ui.placeholder': 'Meddelande',
+    'ui.e2e': '🔒 Meddelanden och samtal är totalsträckskrypterade. Ingen utanför chatten kan läsa eller lyssna på dem.',
+    'ui.device': '📱 {name}s mobil',
+    'ui.tapHint': 'Tryck för nästa ▸',
+    'ui.restart': 'Börja om',
+    'ui.tapToContinue': 'tryck för att fortsätta',
+
+    'title.intro': 'Tänk om Paco hade en assistent…\n\n…utan att lämna WhatsApp? 🎾',
+    'title.tourist': 'Under tiden…\nskriver en turist till assistenten 🌍',
+    'title.end': 'Allt det här…\nutan att lämna WhatsApp. 🎾\n\nGjord med kärlek till Paco 🇪🇸\n— Tommy 🇸🇪\n\n· privat demo · ej ansluten till WhatsApp ·',
+
+    'cap.create': 'Paco skapar morgondagens pull med ETT enda meddelande.',
+    'cap.group': 'Assistenten publicerar i gruppen — i Pacos vanliga format.',
+    'cap.yo': 'För att anmäla sig räcker det att skriva «yo». Listan uppdaterar sig själv.',
+    'cap.obey': 'Paco bestämmer som vanligt — assistenten lyder. Utan ✅ = obekräftad.',
+    'cap.pain': 'Idag: skriva om hela listan vid varje ändring. Nu: ett «yo» och klart.',
+    'cap.later': 'Ett par timmar senare… 14 av 16. Ingen har behövt skriva om något.',
+    'cap.nudge': '2 platser kvar → assistenten påminner själv… med Pacos egna ord.',
+    'cap.closed': 'Fullt. Listan stängd, reserverna i ordning. Automatiskt.',
+    'cap.drop': 'Lördag morgon: ett sent avhopp…',
+    'cap.promote': '…och första reserven kliver in automatiskt. Ingen missas.',
+    'cap.human': 'Assistenten sköter logistiken. Paco står för själen.',
+    'cap.swap': 'Byten önskas precis som vanligt: genom att prata med Paco.',
+    'cap.sorteo': 'Förut: echaloasuerte.com och klistra in länken. Nu: lottning direkt — som respekterar önskade par.',
+    'cap.results': 'Matcherna slutar och vinnarna rapporterar resultaten…',
+    'cap.round2': '…och rond 2 räknas ut av sig själv: vinnare upp ⬆️ förlorare ner ⬇️',
+    'cap.johnIntro': 'En engelsk turist skriver till assistenten. Ingen grupp behövs, inget krångel.',
+    'cap.tommy': 'Och den funkar på svenska också… 🇸🇪',
+    'cap.touristWhy': 'Torre del Mar lever på turism: assistenten pratar spelarens språk — Paco tappar ingen.',
+    'cap.summary': 'I slutet av dagen får Paco SIN privata sammanställning.',
+    'cap.end': 'Paco är fortfarande chefen. Assistenten tar bara bort grovjobbet.'
+  }
+};

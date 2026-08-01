@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Asistente de Paco 🎾 — demo</title>
+  <!-- Privat demo/mockup. Ej ansluten till eller affilierad med WhatsApp/Meta.
+       Alla nummer är fejkade. Inga externa resurser laddas. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="stage">
+    <div id="phone">
+
+      <div id="statusbar">
+        <span id="sb-time">18:47</span>
+        <span class="sb-icons" id="sb-icons"></span>
+      </div>
+
+      <div id="chat-header">
+        <span class="hdr-back" id="hdr-back"></span>
+        <span class="hdr-avatar" id="hdr-avatar"></span>
+        <div class="hdr-text">
+          <div id="hdr-title"></div>
+          <div id="hdr-sub"></div>
+        </div>
+        <span class="hdr-icons" id="hdr-icons"></span>
+      </div>
+
+      <div id="screens"></div>
+
+      <div id="composer">
+        <div class="composer-field">
+          <span id="composer-icons"></span>
+          <span class="ph" id="composer-ph">Mensaje</span>
+          <span id="composer-cam"></span>
+        </div>
+        <span class="mic-btn" id="mic-btn"></span>
+      </div>
+
+      <div id="caption-bar"></div>
+      <div id="tap-hint" class="hidden"></div>
+
+      <div id="act-overlay">
+        <div class="act-logo">🎾</div>
+        <div id="act-text"></div>
+        <div id="act-hint"></div>
+      </div>
+
+      <div id="hud">
+        <button class="hud-chip" data-lang="es">ES</button>
+        <button class="hud-chip" data-lang="en">EN</button>
+        <button class="hud-chip" data-lang="sv">SV</button>
+        <button class="hud-chip" id="hud-restart" title="Reiniciar">↻</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="scenario.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
