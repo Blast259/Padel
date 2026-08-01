@@ -189,15 +189,16 @@ window.PADEL_SCENARIO = (function () {
     'Marcos - Franco\n\n' +
     'Ganadores suben ⬆️ · perdedores bajan ⬇️';
 
+  /* Dagens två pass i denna grupp: 9:30 (tercera) + 11:00 (cuarta alta),
+   * samma hall (fly = Padelfly). 11:00 utökad till 3 pistas som i verkligheten. */
   var RESUMEN =
     '📊 Resumen — sábado\n\n' +
-    '🎾 Pulls organizadas: 3\n' +
+    '🎾 Pulls organizadas: 2\n' +
     '· 9:30 tercera fly — 16/16 ✅\n' +
-    '· 11:00 tercera fly — 16/16 ✅\n' +
-    '· 19:00 cuarta alta — 12/16\n\n' +
-    '👥 Jugadores hoy: 44\n' +
+    '· 11:00 cuarta alta fly — 12/12 ✅ (ampliada a 3 pistas)\n\n' +
+    '👥 Jugadores hoy: 28\n' +
     '🆕 Nuevos: 2 (John 🇬🇧, Tommy 🇸🇪)\n' +
-    '💶 Comisión estimada: 44 € (ej. 1 €/jugador)\n\n' +
+    '💶 Comisión estimada: 28 € (ej. 1 €/jugador)\n\n' +
     '📅 Domingo 9:30 — 16/16 🔒\n\n' +
     'Buenas noches jefe 😴';
 

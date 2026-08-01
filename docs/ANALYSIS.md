@@ -15,10 +15,13 @@
 - **Organisatör:** Paco. Han skapar spelen, jagar spelare, parar ihop, bokar
   banor på två hallar (**Padelfly**/"fly") och får en slant per organiserat
   spel → han vill maximera antalet fyllda pass.
-- **Kanal:** WhatsApp, grupp per hall/nivå (*PULL MAÑANERAS DE 3ª*,
-  ~520 medlemmar). Han skickar även servicemeddelanden ("festivalen ikväll,
-  vägen från El Ingenio till Aldi är avstängd — ta andra vägar") och hälsar
-  nya välkomna personligen: *"Bienvenido al grupo pepe"*.
+- **Kanal:** WhatsApp, en grupp per hall (*PULL MAÑANERAS DE 3ª*,
+  ~520 medlemmar). **Denna grupp täcker Padelfly** — "fly" och "padelfly" i
+  listorna är samma hall — med dagens två pass: **9:30 (tercera)** och
+  **11:00 (cuarta alta)**; därav dubbellistan i ett och samma meddelande
+  *(bekräftat av Tommy)*. Paco skickar även servicemeddelanden ("festivalen
+  ikväll, vägen från El Ingenio till Aldi är avstängd — ta andra vägar") och
+  hälsar nya välkomna personligen: *"Bienvenido al grupo pepe"*.
 - **Spelform:** "pull" = vinnarbanan. 16 platser = 4 banor, 8 = 2 banor —
   och **storleken flexar**: i datan utökas 11:00-pullen från 8 till 12 platser
   (en tredje bana) när efterfrågan kom.
@@ -120,7 +123,8 @@ flera mallar per organisatör.
 4. **Avhopp:** reserv lyfts in manuellt (belagt fall: ola → José Luis).
 5. **Lottning:** pista-blocken postas (verktyg: echaloasuerte.com enligt
    skärmdump); byten förhandlas efteråt.
-6. **Spel:** vinnarbanan. 7. **Repetera** — 2–3 pass/dag, två hallar.
+6. **Spel:** vinnarbanan. 7. **Repetera** — två pass/dag i denna grupp
+   (9:30 + 11:00 på Padelfly), plus den andra hallens grupp.
 
 ## Smärtpunkter → demons svar
 
