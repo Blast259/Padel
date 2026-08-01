@@ -58,6 +58,10 @@ Flöde per pass:
    utrop.
 5. `sorteo` → banindelning som respekterar önskemål (bytesregister per spelare
    — "Machete spelar gärna med Gámez") → text till gruppen.
+   **Multi-hall:** varje pass bär hall/grupp (Padelfly resp. Inmotions —
+   morgon *och* kväll i den senare). Belagt att Paco använder samma pull-mall
+   i båda grupperna, så mallarna återanvänds rakt av; spelarnamn får vara
+   fritext ("Pablo padre de nacho") precis som i hans listor idag.
 6. Kvällsresumé 1:1 till Paco: pass, spelare, nya spelare, uppskattad
    kommission.
 

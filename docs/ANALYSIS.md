@@ -15,11 +15,16 @@
 - **Organisatör:** Paco. Han skapar spelen, jagar spelare, parar ihop, bokar
   banor på två hallar (**Padelfly**/"fly") och får en slant per organiserat
   spel → han vill maximera antalet fyllda pass.
-- **Kanal:** WhatsApp, en grupp per hall (*PULL MAÑANERAS DE 3ª*,
-  ~520 medlemmar). **Denna grupp täcker Padelfly** — "fly" och "padelfly" i
-  listorna är samma hall — med dagens två pass: **9:30 (tercera)** och
-  **11:00 (cuarta alta)**; därav dubbellistan i ett och samma meddelande
-  *(bekräftat av Tommy)*. Paco skickar även servicemeddelanden ("festivalen
+- **Kanal:** WhatsApp, en grupp per hall. Huvudgruppen (*PULL MAÑANERAS DE
+  3ª*, ~520 medlemmar) täcker **Padelfly** — "fly" och "padelfly" i listorna
+  är samma hall — med dagens två pass: **9:30 (tercera)** och **11:00 (cuarta
+  alta)**; därav dubbellistan i ett och samma meddelande *(bekräftat av
+  Tommy)*. Den andra gruppen, **"Pull&partidos inmotions"**, täcker den
+  närliggande hallen **Inmotions** där Paco kör både morgon- och kvällsspel
+  (pulls *och* vanliga partidos). Skärmdump därifrån visar **exakt samma
+  pull-mall** (`Lugar inmotions`, `Nivel cuarta alta`, 12 platser = 3 banor,
+  alla ✅) — formatet är alltså portabelt över hallar, och Pacos verkliga
+  dagsvolym spänner över båda grupperna. Paco skickar även servicemeddelanden ("festivalen
   ikväll, vägen från El Ingenio till Aldi är avstängd — ta andra vägar") och
   hälsar nya välkomna personligen: *"Bienvenido al grupo pepe"*.
 - **Spelform:** "pull" = vinnarbanan. 16 platser = 4 banor, 8 = 2 banor —
@@ -64,6 +69,12 @@ Juan gonzalez
 - **Reserva-upplyft händer på riktigt:** mellan två upplagor försvinner
   `2- ola✅` och första reserven *José Luis cañasveras* tar plats 2, varpå
   Reservas krymper. Precis det flöde demon automatiserar i akt 4.
+- **Identifiering via relationer:** spelare utan känt namn skrivs in som
+  *"Compi de pepe lucena"*, *"eduardo hermano de santi"*, *"Pablo padre de
+  nacho"* — Pacos register är socialt, inte formellt. En bot måste tillåta
+  fritextnamn precis så här.
+- **Meddelanden raderas också** (Inmotions-gruppen visar "meddelandet
+  raderades" från Paco) — ytterligare churn i dagens flöde.
 
 ## Nyckelfynd: listorna vidarebefordras in i gruppen
 
