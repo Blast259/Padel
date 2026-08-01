@@ -1,0 +1,7 @@
+# Riktig chattdata får aldrig committas — allt i source/ utom README ignoreras
+source/*
+!source/README.md
+
+node_modules/
+out/
+*.webm
