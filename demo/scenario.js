@@ -154,21 +154,39 @@ window.PADEL_SCENARIO = (function () {
     'Reservas\n' +
     'pepe jaen';
 
+  /* Pista-blocken följer Pacos riktiga lottningsformat från gruppen:
+   * "Pista N" + ett par per rad ("Spelare - Spelare"). */
   var SORTEO =
-    '🎲 SORTEO DE PISTAS — Pull 9:30\n\n' +
-    'Pista 1: machete + Gamez 🆚 patiño + tellez\n' +
-    'Pista 2: José Luis cañasveras + ale 🆚 antonio martin + borja\n' +
-    'Pista 3: juan Córdoba + domingo 🆚 Miguel zamora + loren\n' +
-    'Pista 4: marcos + franco 🆚 pedro gomez + Juan gonzalez\n\n' +
-    '✔️ machete juega con Gamez (cambio pedido)\n' +
+    "Pull sábado 9'30\n\n" +
+    'Pista 1\n' +
+    'Machete - Gamez\n' +
+    'Patiño - Tellez\n\n' +
+    'Pista 2\n' +
+    'Cañasveras - Ale\n' +
+    'Antonio martin - Borja\n\n' +
+    'Pista 3\n' +
+    'Juan Córdoba - Domingo\n' +
+    'Zamora - Loren\n\n' +
+    'Pista 4\n' +
+    'Marcos - Franco\n' +
+    'Pedro gomez - Juan gonzalez\n\n' +
+    '✔️ Machete con Gamez (cambio pedido)\n' +
     '🍀 Suerte a todos';
 
   var RONDA2 =
-    '🏆 RONDA 2 — el que gana sube ⬆️\n\n' +
-    'Pista 1: machete + Gamez 🆚 José Luis cañasveras + ale\n' +
-    'Pista 2: patiño + tellez 🆚 juan Córdoba + domingo\n' +
-    'Pista 3: antonio martin + borja 🆚 pedro gomez + Juan gonzalez\n' +
-    'Pista 4: Miguel zamora + loren 🆚 marcos + franco\n\n' +
+    '🏆 Ronda 2 — el que gana sube\n\n' +
+    'Pista 1\n' +
+    'Machete - Gamez\n' +
+    'Cañasveras - Ale\n\n' +
+    'Pista 2\n' +
+    'Patiño - Tellez\n' +
+    'Juan Córdoba - Domingo\n\n' +
+    'Pista 3\n' +
+    'Antonio martin - Borja\n' +
+    'Pedro gomez - Juan gonzalez\n\n' +
+    'Pista 4\n' +
+    'Zamora - Loren\n' +
+    'Marcos - Franco\n\n' +
     'Ganadores suben ⬆️ · perdedores bajan ⬇️';
 
   var RESUMEN =
@@ -235,12 +253,15 @@ window.PADEL_SCENARIO = (function () {
 
     /* ─── AKT 3: nudge + stängning ─── */
     { type: 'caption', key: 'cap.nudge' },
+    /* Pacos literala fras ur chatten (chic@s, 9'30, emoji-klustret) */
     { type: 'msg', from: 'bot', time: '21:15', typing: 1200, text:
-      "Venga chic@s faltan 2 para cerrar la pull de las 9'30 vamos 💪🎾" },
+      "Venga chic@s dos más para cerrar la pull de las 9'30 vamos 💪🏻🎾🎾💪🏻" },
     { type: 'msg', from: 'franco', time: '21:18', text: 'yo' },
     { type: 'msg', from: 'pedrog', time: '21:19', text: 'yo✅', chain: true },
     { type: 'msg', from: 'juang', time: '21:20', text: 'yo' },
     { type: 'msg', from: 'pepej', time: '21:21', text: 'si hay hueco yo' },
+    /* Pacos välkomstritual för nya i gruppen — direkt ur chatten */
+    { type: 'msg', from: 'paco', time: '21:21', text: 'Bienvenido al grupo pepe' },
     { type: 'caption', key: 'cap.closed', chain: true },
     { type: 'msg', from: 'bot', time: '21:21', typing: 1400, text: LIST_16 },
     { type: 'pause', ms: 2600 },

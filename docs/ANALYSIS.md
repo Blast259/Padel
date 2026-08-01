@@ -1,25 +1,29 @@
 # Analys: Pacos metod för att organisera padel-pulls via WhatsApp
 
-> **Status: PRELIMINÄR.** Baserad på chattutdrag och en skärmdump från gruppen
-> *PULL MAÑANERAS DE 3ª* (juli 2026). Uppdateras när hela chattexporten finns i
-> `source/chat-export.txt` — kör `npm run parse` och stäm av varje punkt nedan.
+> **Status: verifierad mot riktig chattdata 2026-08-01.** Underlag: chattutdrag,
+> en skärmdump samt ett längre manuellt kopierat sjok ur gruppen (meddelande-
+> kroppar utan tidsstämplar/avsändare — export är blockerad av gruppens
+> *Avancerade chattsekretess*). Rådatan ligger gitignorerad i
+> `source/chat-export.txt`. Kvarstående osäkerheter listas längst ner.
 
 ## Sammanhang
 
 - **Plats:** Torre del Mar (Axarquía, Málaga). Spelarbas: mest spanska
-  semesterfirare + lokala spelare. Hög omsättning på folk → ständigt inflöde av
-  nya spelare.
-- **Organisatör:** Paco. Han är navet: skapar spelen, jagar spelare, parar ihop,
-  bokar banor på två hallar (bl.a. **Padelfly**, "fly" i chatten) och får en
-  liten summa per organiserat spel → han vill maximera antalet fyllda pass.
-- **Kanal:** WhatsApp, en grupp per hall/nivå (gruppen i skärmdumpen:
-  *PULL MAÑANERAS DE 3ª*, ~520 medlemmar, långt ifrån alla aktiva).
-- **Spelform:** "pull" = vinnarbanan. 16 spelare = 4 banor, 8 spelare = 2 banor.
-  Vinnare flyttar upp mot bana 1, förlorare flyttar ner.
+  semesterfirare + lokala spelare. Hög omsättning → ständigt nya namn
+  (chatten visar t.o.m. platshållare som *"Compi de pepe lucena"* — folk
+  skriver upp kompisar utan namn).
+- **Organisatör:** Paco. Han skapar spelen, jagar spelare, parar ihop, bokar
+  banor på två hallar (**Padelfly**/"fly") och får en slant per organiserat
+  spel → han vill maximera antalet fyllda pass.
+- **Kanal:** WhatsApp, grupp per hall/nivå (*PULL MAÑANERAS DE 3ª*,
+  ~520 medlemmar). Han skickar även servicemeddelanden ("festivalen ikväll,
+  vägen från El Ingenio till Aldi är avstängd — ta andra vägar") och hälsar
+  nya välkomna personligen: *"Bienvenido al grupo pepe"*.
+- **Spelform:** "pull" = vinnarbanan. 16 platser = 4 banor, 8 = 2 banor —
+  och **storleken flexar**: i datan utökas 11:00-pullen från 8 till 12 platser
+  (en tredje bana) när efterfrågan kom.
 
-## Pacos listformat (hans "produkt")
-
-Observerat format, återkommer i varje utrop:
+## Listformatet (bekräftat i många upplagor)
 
 ```
 Pull sabado
@@ -31,7 +35,6 @@ Lugar fly
 2 José Luis cañasveras✅
 3- Gamez
 4patiño✅
-5-antonio martin✅
 …
 16 tellez✅
 
@@ -40,77 +43,113 @@ Reservas
 Juan gonzalez
 ```
 
-Egenskaper:
+- **Hela dubbelmeddelandet repostas vid varje förändring** (både 9:30- och
+  11:00-listan i samma meddelande) — datan innehåller 9+ nästan identiska
+  upplagor där en enda rad skiljer. Det är exakt denna repetition boten tar
+  över.
+- Ojämn numrering (`1-`, `2 `, `4patiño`, `6 - ale`) — handredigering i mobil.
+- **Handhavandefel förekommer:** i en upplaga har rad 1 blivit
+  `1.German/6.Vicki` och rad 6 tömts — listkorruption vid manuell redigering.
+  Starkaste beviset för smärtpunkt #1.
+- `✅` finns i lördagslistorna men **inte alls** i söndagslistan → markören är
+  formatberoende (se öppna frågor).
+- **Reserva-upplyft händer på riktigt:** mellan två upplagor försvinner
+  `2- ola✅` och första reserven *José Luis cañasveras* tar plats 2, varpå
+  Reservas krymper. Precis det flöde demon automatiserar i akt 4.
 
-| Element | Observation | Tolkning |
+## Lottningsformatet (bekräftat — viktigt!)
+
+Pacos riktiga banindelning ser ut så här (citat):
+
+```
+Pull sábado 9'30
+
+Pista 1
+Tellez - olé
+Marcos- Zamora
+
+Pista 2
+Borja - John
+Machete - Patiño
+…
+```
+
+Alltså: `Pista N` + **ett par per rad** (`Spelare - Spelare`), inte allt på en
+rad. Demons sorteo- och rond 2-meddelanden följer numera exakt detta format.
+Notera även kopplingen till bytesönskemålet i chatten ("Machete quería cambiar
+a Patiño por Gamez") — lottningen hade parat Machete–Patiño, och machete ville
+ha Gámez: **efterlottnings-förhandlingar är ett verkligt moment** som botens
+önskemåls-respekterande sorteo eliminerar.
+
+## Pacos röst (frasinventarium ur datan)
+
+- `Venga chic@s dos más para cerrar la pull de las 11'00 vamos`
+- `Venga uno más solo chavales` / `Venga uno más` / `Vamos dos más chicos`
+- `Vamos vuelven a faltar dos para las 11'00!!`
+- `Venga uno más solo chaval@s💪🏻🎾🎾💪🏻`
+- `Bienvenido al grupo pepe`
+- Mönster: **"Venga/Vamos" + antal som saknas + tid + framåtdriv**, ofta med
+  💪🏻🎾. Botens nudge i demon använder numera den literala frasen.
+
+## Andra format i samma grupp
+
+Söndagspasset ser annorlunda ut:
+
+```
+Domingo
+2 Agosto de 9.00 a 11.00 en padelfly
+1.German
+2.Damian
+…
+Reserva
+JOSÉ LUIS 🇪🇸
+```
+
+Punktnumrering (`1.German`), tidsintervall i stället för starttid, `Reserva` i
+singular, versal reserv med flagga, ingen nivårad och inga ✅. Trolig
+förklaring: annan organisatör eller annat passformat (öppet 2-timmarspass).
+→ En riktig bot måste antingen låsas till Pacos pull-format eller lära sig
+flera mallar per organisatör.
+
+## Arbetsflödet idag (rekonstruerat, nu belagt)
+
+1. **Utrop** med dubbellistan (alla pass för dagen i ett meddelande).
+2. **Fyllnad:** namn tillkommer ett i taget; hela meddelandet repostas varje
+   gång; Paco ropar när det står still.
+3. **Stängning** vid fullt; överskott → `Reservas`.
+4. **Avhopp:** reserv lyfts in manuellt (belagt fall: ola → José Luis).
+5. **Lottning:** pista-blocken postas (verktyg: echaloasuerte.com enligt
+   skärmdump); byten förhandlas efteråt.
+6. **Spel:** vinnarbanan. 7. **Repetera** — 2–3 pass/dag, två hallar.
+
+## Smärtpunkter → demons svar
+
+| # | Smärta (belagd i datan) | I demon |
 |---|---|---|
-| Rubrik | `Pull <dag>` + `Hora` (med ‼️-emfas) + `Nivel` + `Lugar` | Fast mall; tiden är det viktiga (dubbla ‼️) |
-| Numrerad lista | Ojämn interpunktion: `1-`, `2 `, `3- `, `4patiño` | Skrivs/uppdateras för hand i farten, ofta mobil |
-| `✅` | På de flesta men inte alla namn | Bekräftelsemarkör. **Öppen fråga:** spelarens egen bekräftelse eller Pacos verifiering/betalning? |
-| `Reservas` | Egen sektion efter listan | Kölista; lyfts upp vid avhopp |
-| Storlek | 16 platser (4 banor) resp. 8 platser (2 banor) | Listlängden = bokade banor |
-| Nivåer | `tercera`, `cuarta alta` | Spansk nivåskala; separata pulls per nivå |
+| 1 | Hela dubbellistan repostas för varje namn; korruption förekommer (`1.German/6.Vicki`) | "yo" → listan uppdaterar sig själv (akt 2) |
+| 2 | Paco ropar manuellt när det står still (7 varianter i datan) | Auto-nudge med hans literala fras (akt 3) |
+| 3 | Avhopp → manuellt reserva-upplyft (belagt: ola→José Luis) | Automatiskt upplyft (akt 4) |
+| 4 | Extern lottning + efterförhandlingar (Machete/Patiño/Gámez) | Sorteo i chatten, i hans pista-format, som respekterar önskemål (akt 5) |
+| 5 | Vinnarbanan-rotationen räknas för hand | Rond 2 genereras (akt 6) |
+| 6 | Utländska spelare (jfr "John", turister) och språk | Boten svarar 1:1 på EN/SV (akt 7) |
+| 7 | Osynligt arbete, ingen översikt | Privat dagsresumé med 💶 (akt 8) |
 
-## Pacos kommunikationsstil
+Dessutom belagt men ännu inte i demon: **flexibel pullstorlek** (8→12) — en
+framtida botfunktion ("reservas fylls på → föreslå en tredje pista"), och
+**servicemeddelanden** (trafik/festival) som förblir Pacos mänskliga roll.
 
-Direktcitat ur chatten:
+## Kvarstående öppna frågor
 
-- `Venga apuntaros para las 11'00 gracias` — utrop, informellt, `11'00`-format.
-- `Venga chic@s dos más para cerrar la pull de las 11'00 vamos` — jagar de
-  sista platserna; inkluderande `chic@s`; "cerrar la pull" = stänga listan.
-- `Paco, creo que Machete quería cambiar a Patiño por Gamez, pregúntale? Jajaja`
-  — spelare ber Paco om **byten/parningar**; Paco är skiljedomare.
-- Stavning/förkortningar: `q` (que), `x privado` (por privado), utelämnade
-  accenter. **Detta är stil, inte fel** — demon härmar det medvetet.
-
-## Nyckelupptäckt: Paco använder redan ett lottningsverktyg
-
-Skärmdumpen visar att Paco delar länkar från **echaloasuerte.com**
-("Generación de grupos aleatorios") i gruppen — en per pull ("pull de las
-9'30", "pull de las 11'00"). Alltså:
-
-1. Paco är **inte** teknikfientlig — han är WhatsApp-centrerad. Verktyg som bor
-   *i* chatten accepteras.
-2. Lottningen är redan en etablerad del av flödet → en bot som lottar direkt i
-   chatten ersätter ett externt moment han redan gör, i stället för att införa
-   ett nytt beteende.
-3. Ren slump matchar inte önskemålen (jfr bytet Machete/Gámez) → **lottning som
-   respekterar önskemål** är den tydligaste förbättringen mot idag.
-
-## Arbetsflödet idag (rekonstruerat)
-
-1. **Utropet** (kvällen före/samma morgon): Paco postar mallen + jagar: "Venga…"
-2. **Fyllnad:** spelare svarar; listan uppdateras manuellt om och om igen.
-3. **Stängning:** när 8/16 nåtts — "cerrar la pull"; överskott → `Reservas`.
-4. **Avhopp:** hanteras manuellt; reserv lyfts in.
-5. **Lottning:** echaloasuerte.com-länk delas; byten jämkas manuellt efter
-   kunskap om vem som vill spela med vem.
-6. **Spel:** vinnarbanan-rotation på plats.
-7. **Nästa dag:** allt börjar om. Multiplicera med 2–3 pass/dag och två hallar.
-
-## Smärtpunkter (det demon adresserar)
-
-| # | Smärta | Kostnad idag | I demon |
-|---|---|---|---|
-| 1 | Listan skrivs om manuellt vid varje förändring | Många små avbrott hela dagen | "yo" → listan uppdaterar sig själv, akt 2 |
-| 2 | Jaga de sista platserna | Pacos uppmärksamhet | Auto-nudge med Pacos fras, akt 3 |
-| 3 | Avhopp → hitta ersättare | Stress på morgonen | Reserva lyfts automatiskt, akt 4 |
-| 4 | Lottning via extern sajt + manuella byten | Extra moment + gnäll | Sorteo i chatten som respekterar önskemål, akt 5 |
-| 5 | Räkna ut vinnarbanan-rotationen | Huvudräkning på plats | Rond 2 genereras, akt 6 |
-| 6 | Utländska turister faller bort (språk) | Förlorade intäkter | Boten svarar 1:1 på EN/SV, akt 7 |
-| 7 | Ingen översikt över dagens spel/intäkter | Osynligt arbete | Privat dagsresumé med €, akt 8 |
-
-## Öppna frågor att besvara med chattexporten
-
-1. **Vem uppdaterar listan?** Kopierar spelarna hela listan och lägger till sig
-   själva (vanligt i spanska grupper), eller redigerar/reposterar Paco? Avgör
-   botens interaktionskontrakt och demons centrala caption (`cap.pain`).
-2. **Vad betyder ✅ exakt?** Självbekräftelse, Pacos verifiering eller betalning?
-3. **Exakt vinnarbanan-regel:** består paren mellan ronder (som demon antar) eller
-   splittas de? Hur rapporteras resultat?
-4. Hur ofta blir pulls **inte** fulla, och vad gör Paco då (slår ihop nivåer?
-   ställer in? 8 i stället för 16)?
-5. Bokningsflödet mot hallarna: när bokar/avbokar Paco banor, och kostar
-   avbokningar honom något?
-6. Frasfrekvens för Pacos rop (`npm run parse` ger listan) → justera botens
-   nudge-fraser till hans vanligaste formuleringar.
+1. **Vem redigerar listan idag?** Kopiedatan saknar avsändare. Indicier
+   (en-rad-i-taget-tillväxt + korruptionsfelet) pekar mot att spelarna själva
+   kopierar och lägger till sig, men Paco kan också vara den som reposterar.
+   *Tommy kan svara direkt — han skrev upp sig själv som `7 tommy` i
+   söndagslistan.*
+2. **✅-semantiken:** självbekräftelse, Pacos verifiering eller betalning?
+   (Och varför saknas ✅ helt i söndagsformatet?)
+3. **Är söndagspasset en annan organisatör?** Påverkar hur många mallar en
+   riktig bot behöver.
+4. Vinnarbanan-detaljer: består paren mellan ronder (demons antagande) eller
+   splittas de? Hur rapporteras resultat i praktiken?
+5. Bokningsflödet mot hallarna (när bokas/avbokas banor, kostnad vid
+   avbokning).
