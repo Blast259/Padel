@@ -312,7 +312,7 @@ window.PADEL_SCENARIO = (function () {
     { type: 'caption', key: 'cap.end' },
     { type: 'pause', ms: 2200, chain: true },
 
-    { type: 'title', key: 'title.end' },
+    { type: 'title', key: 'title.end', persist: true },
     { type: 'end', chain: true }
   ];
 

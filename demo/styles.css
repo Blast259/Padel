@@ -306,7 +306,7 @@ body.record.has-caption .screen { padding-bottom: 8.6rem; }
   position: absolute;
   inset: 0;
   z-index: 20;
-  background: rgba(11, 20, 26, .97);
+  background: #0b141a;
   color: #f2f6f8;
   display: flex;
   flex-direction: column;

@@ -277,8 +277,10 @@
         showOverlay(beat.key);
         if (state.auto) {
           await delay(scaled(2800));
-          hideOverlay();
-          await delay(scaled(400));
+          if (!beat.persist) { /* slutkortet ska stanna kvar i bild */
+            hideOverlay();
+            await delay(scaled(400));
+          }
         }
         break;
       case 'caption':
