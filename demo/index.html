@@ -45,6 +45,25 @@
         <div class="act-logo">🎾</div>
         <div id="act-text"></div>
         <div id="act-hint"></div>
+        <button id="act-fb" class="fb-btn fb-btn--primary" hidden></button>
+      </div>
+
+      <div id="fb-panel">
+        <div class="fb-card">
+          <div class="fb-head">
+            <span id="fb-title"></span>
+            <button id="fb-close" aria-label="Cerrar">✕</button>
+          </div>
+          <div id="fb-context"></div>
+          <textarea id="fb-text" rows="3"></textarea>
+          <button id="fb-save" class="fb-btn fb-btn--primary"></button>
+          <div id="fb-list-title"></div>
+          <div id="fb-list"></div>
+          <div class="fb-actions">
+            <a id="fb-send" class="fb-btn fb-btn--wa" target="_blank" rel="noopener"></a>
+            <button id="fb-copy" class="fb-btn"></button>
+          </div>
+        </div>
       </div>
 
       <div id="landing">
@@ -66,6 +85,7 @@
         <button class="hud-chip" data-lang="en">EN</button>
         <button class="hud-chip" data-lang="sv">SV</button>
         <button class="hud-chip" id="hud-restart" title="Reiniciar">↻</button>
+        <button class="hud-chip" id="hud-feedback">💬</button>
       </div>
 
     </div>

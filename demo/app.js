@@ -91,7 +91,19 @@
     landingBody: document.getElementById('landing-body'),
     landingFeedback: document.getElementById('landing-feedback'),
     landingStart: document.getElementById('landing-start'),
-    landingFoot: document.getElementById('landing-foot')
+    landingFoot: document.getElementById('landing-foot'),
+    actFb: document.getElementById('act-fb'),
+    fbPanel: document.getElementById('fb-panel'),
+    fbTitle: document.getElementById('fb-title'),
+    fbClose: document.getElementById('fb-close'),
+    fbContext: document.getElementById('fb-context'),
+    fbText: document.getElementById('fb-text'),
+    fbSave: document.getElementById('fb-save'),
+    fbListTitle: document.getElementById('fb-list-title'),
+    fbList: document.getElementById('fb-list'),
+    fbSend: document.getElementById('fb-send'),
+    fbCopy: document.getElementById('fb-copy'),
+    hudFeedback: document.getElementById('hud-feedback')
   };
 
   function initChrome() {
@@ -124,6 +136,7 @@
       el.landingStart.textContent = t('landing.start');
       el.landingFoot.textContent = t('landing.foot');
     }
+    if (el.fbPanel) fbApplyLang();
   }
 
   function setLang(l) {
@@ -328,6 +341,10 @@
         state.done = true;
         window.__DEMO_DONE = true;
         document.title = 'PADEL_DEMO_DONE';
+        if (!state.auto && !state.record) {
+          el.actFb.hidden = false;
+          el.actFb.textContent = t('fb.endButton');
+        }
         break;
     }
   }
@@ -416,11 +433,113 @@
     requestWakeLock();
   }
 
+  /* ── Feedback per steg (💬) ─────────────────────────────
+   * Förslag sparas lokalt (localStorage) med steg-kontext och skickas som
+   * ETT färdigt WhatsApp-meddelande — mottagaren väljer själv chatten
+   * (inget telefonnummer i sidan). Ingen backend. */
+  var FB_KEY = 'padel-demo-feedback-v1';
+  var feedback = (function () {
+    try { return JSON.parse(localStorage.getItem(FB_KEY) || '[]'); }
+    catch (e) { return []; }
+  })();
+  function fbPersist() {
+    try { localStorage.setItem(FB_KEY, JSON.stringify(feedback)); } catch (e) { /* ok */ }
+  }
+  function fbStepLabel() {
+    var cap = state.captionKey ? t(state.captionKey) : '';
+    if (cap.length > 70) cap = cap.slice(0, 67) + '…';
+    return t('fb.step') + ' ' + Math.min(state.groupIdx + 1, groups.length) +
+      '/' + groups.length + (cap ? ' · «' + cap + '»' : '');
+  }
+  function fbBundle() {
+    var lines = [t('fb.bundleHead'), ''];
+    for (var i = 0; i < feedback.length; i++) {
+      lines.push((i + 1) + '. [' + feedback[i].label + ']');
+      lines.push(feedback[i].text);
+      lines.push('');
+    }
+    return lines.join('\n').trim();
+  }
+  function fbRender() {
+    el.fbContext.textContent = fbStepLabel();
+    el.fbList.innerHTML = '';
+    for (var i = 0; i < feedback.length; i++) {
+      (function (idx) {
+        var item = document.createElement('div');
+        item.className = 'fb-item';
+        var tag = document.createElement('span');
+        tag.className = 'fb-tag';
+        tag.textContent = feedback[idx].label.split(' · ')[0];
+        var body = document.createElement('span');
+        body.className = 'fb-body';
+        body.textContent = feedback[idx].text;
+        var del = document.createElement('button');
+        del.className = 'fb-del';
+        del.textContent = '✕';
+        del.addEventListener('click', function () {
+          feedback.splice(idx, 1);
+          fbPersist();
+          fbRender();
+        });
+        item.appendChild(tag); item.appendChild(body); item.appendChild(del);
+        el.fbList.appendChild(item);
+      })(i);
+    }
+    if (!feedback.length) {
+      var empty = document.createElement('div');
+      empty.className = 'fb-item';
+      empty.textContent = t('fb.empty');
+      el.fbList.appendChild(empty);
+    }
+    var disabled = !feedback.length;
+    el.fbSend.classList.toggle('disabled', disabled);
+    el.fbCopy.classList.toggle('disabled', disabled);
+    el.fbSend.href = 'https://wa.me/?text=' + encodeURIComponent(fbBundle());
+    var badge = el.hudFeedback.querySelector('.fb-count');
+    if (feedback.length) {
+      if (!badge) {
+        badge = document.createElement('span');
+        badge.className = 'fb-count';
+        el.hudFeedback.appendChild(badge);
+      }
+      badge.textContent = feedback.length;
+    } else if (badge) {
+      badge.remove();
+    }
+  }
+  function fbApplyLang() {
+    el.fbTitle.textContent = t('fb.title');
+    el.fbText.placeholder = t('fb.placeholder');
+    el.fbSave.textContent = t('fb.save');
+    el.fbListTitle.textContent = t('fb.listTitle');
+    el.fbSend.textContent = t('fb.send');
+    el.fbCopy.textContent = t('fb.copy');
+    if (!el.actFb.hidden) el.actFb.textContent = t('fb.endButton');
+  }
+  function fbOpen() {
+    fbRender();
+    el.fbPanel.classList.add('show');
+    el.fbText.focus();
+  }
+  function fbClose() {
+    el.fbPanel.classList.remove('show');
+  }
+  function fbSaveCurrent() {
+    var text = el.fbText.value.trim();
+    if (!text) return;
+    feedback.push({ label: fbStepLabel(), text: text, lang: state.lang, at: Date.now() });
+    el.fbText.value = '';
+    fbPersist();
+    fbRender();
+  }
+
   /* ── Händelser ──────────────────────────────────────── */
   function bindEvents() {
     el.stage.addEventListener('click', function (ev) {
       if (ev.target.closest('#hud')) return;
       if (ev.target.closest('#landing')) return;
+      if (ev.target.closest('#fb-panel')) return;
+      if (ev.target.closest('#act-fb')) return;
       if (!state.auto) advance();
     });
     if (el.landing) {
@@ -431,11 +550,48 @@
       });
     }
     document.addEventListener('keydown', function (ev) {
+      if (ev.target && (ev.target.tagName === 'TEXTAREA' || ev.target.tagName === 'INPUT')) return;
       if (ev.code === 'Space' || ev.code === 'ArrowRight') {
         ev.preventDefault();
         if (state.auto) return;
         if (landingVisible()) { dismissLanding(); return; }
         advance();
+      }
+    });
+
+    /* Feedback-panelen */
+    el.hudFeedback.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      fbOpen();
+    });
+    el.actFb.addEventListener('click', function (ev) {
+      ev.stopPropagation();
+      fbOpen();
+    });
+    el.fbClose.addEventListener('click', fbClose);
+    el.fbPanel.addEventListener('click', function (ev) {
+      if (!ev.target.closest('.fb-card')) fbClose();
+    });
+    el.fbSave.addEventListener('click', fbSaveCurrent);
+    el.fbSend.addEventListener('click', function () {
+      /* href är alltid uppdaterad i fbRender; uppdatera en sista gång */
+      el.fbSend.href = 'https://wa.me/?text=' + encodeURIComponent(fbBundle());
+    });
+    el.fbCopy.addEventListener('click', function () {
+      var bundle = fbBundle();
+      var done = function () {
+        el.fbCopy.textContent = t('fb.copied');
+        setTimeout(function () { el.fbCopy.textContent = t('fb.copy'); }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(bundle).then(done, function () { /* ok */ });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = bundle;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) { /* ok */ }
+        ta.remove();
       }
     });
     el.hud.addEventListener('click', function (ev) {
