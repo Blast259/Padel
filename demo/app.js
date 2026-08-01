@@ -10,7 +10,10 @@
 
   /* ── Parametrar & state ─────────────────────────────── */
   var params = new URLSearchParams(location.search);
-  var langParam = params.get('lang');
+  /* Språk kan väljas via #sv/#es/#en (överlever alla delningslänkar) eller ?lang= */
+  var hashLang = (location.hash || '').replace('#', '').toLowerCase();
+  var langParam = (hashLang === 'es' || hashLang === 'en' || hashLang === 'sv')
+    ? hashLang : params.get('lang');
   var state = {
     lang: (langParam === 'en' || langParam === 'sv') ? langParam : 'es',
     auto: params.get('autoplay') === '1',
@@ -82,7 +85,13 @@
     actText: document.getElementById('act-text'),
     actHint: document.getElementById('act-hint'),
     hud: document.getElementById('hud'),
-    tapHint: document.getElementById('tap-hint')
+    tapHint: document.getElementById('tap-hint'),
+    landing: document.getElementById('landing'),
+    landingTitle: document.getElementById('landing-title'),
+    landingBody: document.getElementById('landing-body'),
+    landingFeedback: document.getElementById('landing-feedback'),
+    landingStart: document.getElementById('landing-start'),
+    landingFoot: document.getElementById('landing-foot')
   };
 
   function initChrome() {
@@ -104,9 +113,16 @@
     if (state.captionKey) el.caption.textContent = t(state.captionKey);
     if (state.overlayKey) el.actText.textContent = t(state.overlayKey);
     el.actHint.textContent = state.auto ? '' : t('ui.tapToContinue');
-    var chips = el.hud.querySelectorAll('[data-lang]');
+    var chips = document.querySelectorAll('[data-lang]');
     for (var i = 0; i < chips.length; i++) {
       chips[i].classList.toggle('active', chips[i].getAttribute('data-lang') === state.lang);
+    }
+    if (el.landing) {
+      el.landingTitle.textContent = t('landing.title');
+      el.landingBody.textContent = t('landing.body');
+      el.landingFeedback.textContent = t('landing.feedback');
+      el.landingStart.textContent = t('landing.start');
+      el.landingFoot.textContent = t('landing.foot');
     }
   }
 
@@ -390,16 +406,36 @@
     if (document.visibilityState === 'visible' && wakeLock) requestWakeLock();
   });
 
+  /* ── Startskärm (visas bara i interaktivt läge) ─────── */
+  function landingVisible() {
+    return el.landing && el.landing.classList.contains('show');
+  }
+  function dismissLanding() {
+    el.landing.classList.remove('show');
+    el.tapHint.classList.remove('hidden');
+    requestWakeLock();
+  }
+
   /* ── Händelser ──────────────────────────────────────── */
   function bindEvents() {
     el.stage.addEventListener('click', function (ev) {
       if (ev.target.closest('#hud')) return;
+      if (ev.target.closest('#landing')) return;
       if (!state.auto) advance();
     });
+    if (el.landing) {
+      el.landing.addEventListener('click', function (ev) {
+        var chip = ev.target.closest('[data-lang]');
+        if (chip) { setLang(chip.getAttribute('data-lang')); return; }
+        dismissLanding();
+      });
+    }
     document.addEventListener('keydown', function (ev) {
       if (ev.code === 'Space' || ev.code === 'ArrowRight') {
         ev.preventDefault();
-        if (!state.auto) advance();
+        if (state.auto) return;
+        if (landingVisible()) { dismissLanding(); return; }
+        advance();
       }
     });
     el.hud.addEventListener('click', function (ev) {
@@ -426,6 +462,7 @@
   if (state.auto) {
     autoplayLoop();
   } else if (isNaN(state.jumpTo)) {
-    el.tapHint.classList.remove('hidden');
+    /* interaktivt läge: startskärm först, tap-hint efter avfärdande */
+    el.landing.classList.add('show');
   }
 })();

@@ -18,6 +18,12 @@ window.PADEL_I18N = {
     'ui.restart': 'Reiniciar',
     'ui.tapToContinue': 'toca para continuar',
 
+    'landing.title': 'Asistente de Paco 🎾',
+    'landing.body': 'Un concepto para hacerle la vida más fácil a Paco: un asistente dentro de WhatsApp que lleva las listas, los sorteos, las reservas y los recordatorios de sus pulls — sin cambiar su manera de organizar.\n\nEsto es una demo interactiva: toca la pantalla para avanzar por una jornada completa.',
+    'landing.start': 'Empezar ▶',
+    'landing.feedback': 'Al final, cuéntale a Tommy qué te parece 🙏',
+    'landing.foot': 'Demo privada · no afiliada a WhatsApp · números ficticios',
+
     'title.intro': '¿Y si Paco tuviera un asistente…\n\n…sin salir de WhatsApp? 🎾',
     'title.tourist': 'Mientras tanto…\nun turista escribe al asistente 🌍',
     'title.end': 'Todo esto…\nsin salir de WhatsApp. 🎾\n\nHecho con cariño para Paco 🇪🇸\n— Tommy 🇸🇪\n\n· demo privada · no afiliada a WhatsApp ·',
@@ -58,6 +64,12 @@ window.PADEL_I18N = {
     'ui.restart': 'Restart',
     'ui.tapToContinue': 'tap to continue',
 
+    'landing.title': 'Asistente de Paco 🎾',
+    'landing.body': "A concept to make Paco's life easier: an assistant inside WhatsApp that handles the lists, court draws, waitlists and reminders for his pulls — without changing how he organizes.\n\nThis is an interactive demo: tap the screen to step through a full day.",
+    'landing.start': 'Start ▶',
+    'landing.feedback': 'Afterwards, tell Tommy what you think 🙏',
+    'landing.foot': 'Private demo · not affiliated with WhatsApp · fictitious numbers',
+
     'title.intro': 'What if Paco had an assistant…\n\n…without leaving WhatsApp? 🎾',
     'title.tourist': 'Meanwhile…\na tourist messages the assistant 🌍',
     'title.end': 'All of this…\nwithout leaving WhatsApp. 🎾\n\nMade with love for Paco 🇪🇸\n— Tommy 🇸🇪\n\n· private demo · not affiliated with WhatsApp ·',
@@ -97,6 +109,12 @@ window.PADEL_I18N = {
     'ui.tapHint': 'Tryck för nästa ▸',
     'ui.restart': 'Börja om',
     'ui.tapToContinue': 'tryck för att fortsätta',
+
+    'landing.title': 'Asistente de Paco 🎾',
+    'landing.body': 'Ett koncept för att göra livet lättare för Paco: en assistent inne i WhatsApp som sköter listorna, lottningen, reserverna och påminnelserna för hans pulls — utan att ändra hans sätt att organisera.\n\nDet här är en interaktiv demo: tryck på skärmen för att stega igenom en hel speldag.',
+    'landing.start': 'Starta ▶',
+    'landing.feedback': 'Berätta efteråt för Tommy vad du tycker 🙏',
+    'landing.foot': 'Privat demo · ej ansluten till WhatsApp · fiktiva nummer',
 
     'title.intro': 'Tänk om Paco hade en assistent…\n\n…utan att lämna WhatsApp? 🎾',
     'title.tourist': 'Under tiden…\nskriver en turist till assistenten 🌍',
