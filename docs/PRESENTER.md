@@ -33,6 +33,11 @@ det: varje tryck = nästa händelse.
 idag. Assistenten ändrar inte det beteendet med ett kommatecken: den blir bara
 källan som alltid har listan färdig, rätt och redo att vidarebefordras.
 
+**Nattskifteskortet:** Paco brukar klaga på folk som skriver klockan två på
+natten (Mikels observation). Säg: *"El asistente nunca duerme"* — nattens
+"yo" hamnar i listan direkt, och Paco vaknar till EN färdig resumé i stället
+för fyrtio notiser. Det är avlastningen han känner i kroppen varje morgon.
+
 ## Ögonblicken att låta landa (i ordning)
 
 | Akt | Vad som händer | Varför det träffar Paco |

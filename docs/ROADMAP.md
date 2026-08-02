@@ -91,6 +91,13 @@ beslut** till Paco är tillbaka. Ambitionsnivån görs ställbar per funktion
 (förslag ↔ autopilot), så Paco själv väljer hur mycket som får ske utan hans
 "dale". Inget publiceras någonsin i hans namn utan honom.
 
+**Belagt behov:** spelare skriver mitt i natten — *"He's always complaining
+about people writing at 2am or whatever"* (Mikel, som känner Paco). Boten
+sover aldrig: nattens "yo" hamnar i listan direkt, och Paco vaknar till EN
+färdig morgonresumé i stället för fyrtio notiser. Samma granskning gav också
+valideringen *"It writes exactly like Paco"* — formathärmningen fungerar på
+folk som känner honom.
+
 ### Steg 2 (om Paco vill mer)
 
 - **Knappar/listor i 1:1** (interaktiva meddelanden i Cloud API) för "yo",

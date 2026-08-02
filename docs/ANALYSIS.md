@@ -248,6 +248,10 @@ platser, en bana). Mallar per passtyp, inte per organisatör.
 Dessutom belagt men ännu inte i demon: **flexibel pullstorlek** (8→12) — en
 framtida botfunktion ("reservas fylls på → föreslå en tredje pista"), och
 **servicemeddelanden** (trafik/festival) som förblir Pacos mänskliga roll.
+Ur första granskningsrundan (Mikel, 2026-08-02) dessutom: **meddelanden
+dygnet runt** — Paco klagar återkommande på folk som skriver kl. 02 —
+adresseras av beredskapsläget i ROADMAP.md (boten sover aldrig; Paco vaknar
+till en resumé i stället för notisstormen).
 
 ## Kvarstående öppna frågor
 
