@@ -4,6 +4,15 @@ Målet är inte att visa teknik — det är att Paco ska känna **"den här för
 hur jag jobbar"** inom 30 sekunder. Allt i demon är byggt kring hans eget
 format, hans egna fraser och hans spelares riktiga smeknamn.
 
+## Ta med en tvåspråkig stammis
+
+Om Mikel (10 år i området, spelar i gruppen, engelska/spanska) tackar ja:
+låt **honom** driva genomgången på spanska medan du står för gesten. Demon
+berättar sig själv på spanska (#es-länken), Mikel förstärker som spelare
+("it writes exactly like Paco"), och du överlämnar överraskningen. En
+stammis som säger *"vi skulle använda det här"* väger tyngre än varje
+argument. Boka Mikel innan du bokar Paco.
+
 ## Före visningen (5 min förberedelse)
 
 1. **Ladda demon i din mobil:** kör `npm run demo` på datorn och öppna
