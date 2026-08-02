@@ -185,6 +185,32 @@ utfrågningarna och turistinflödet ska riktas dit. Varje extra fylld
   omsätter flera hundra euro — varje ofyllt pass är direkt förlorad intäkt för
   både hallen och Paco. Det är det ekonomiska argumentet för boten.
 
+## Måndagsdatan: tyst churn och oanvända reserver (2026-08-02)
+
+Söndagens reposter av måndagslistorna (Padelfly) blottade tre nya mönster:
+
+1. **Nivån varierar per veckodag för samma tid:** måndag 9:30 är *cuarta
+   alta* (lördag 9:30 var *tercera*; tisdag är nivå 3-poolen). Botens
+   passmallar måste alltså utgå från ett **veckoschema** (dag × tid × nivå),
+   inte fasta tider.
+2. **Tyst churn — hål syns inte:** elvan gick 6/8 → **8/8 (full)** →
+   **5/8** (peter, pepe jaen och jesus hijo försvann samtidigt, utan ett
+   ord i gruppen — bara en tyst repost) → tillbaka till 8/8 efter fyra
+   utrop → utökad till 12. Den som inte diffar två långa reposter ser
+   aldrig att platser öppnats. Nya rop-varianter i inventariet: *"Venga
+   chicos falta mucha gente para la pull dónde estáis !!"*, *"Vamos para
+   las 11'00 hay huecos apuntaros chic@s"*, *"Venga quien más se apunta
+   para jugar a las 11'00!!"*.
+3. **Reservas-paradoxen:** samtidigt som elvan gapade med tre hål stod
+   **Edu G och Joanfranco i kö som reservas på 9:30** — samma dag, samma
+   hall, *samma nivå* (cuarta alta). Ingen dirigerade dem dit. Manuell
+   hantering ser inte tvärs över passen.
+
+Dessutom: fler redigeringsartefakter (`8-,` och `,theo`) och **namnkollisioner**
+— *"Emilio"* (elvan) vs *"emilio González"* (nian), *"Eduardo ( Santi)"* vs
+*"Edu G"* vs *"santi"*. Pacos register är socialt; en bot skiljer personer på
+WhatsApp-nummer och låter Pacos fritextalias vara just alias.
+
 ## Lottningsformatet (bekräftat — viktigt!)
 
 Pacos riktiga banindelning ser ut så här (citat):

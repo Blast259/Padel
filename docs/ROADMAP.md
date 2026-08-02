@@ -73,6 +73,20 @@ Flöde per pass:
    ett annat pass (*"Por la tarde a las 18'00 podrías jugar mañana?"*) —
    boten gör detsamma: nej till ett pass ⇒ föreslå dagens/veckans andra
    lediga pass på rätt nivå, och notera svaret i tillgänglighetsregistret.
+   **Lärdomar ur måndagsdatan (tyst churn):**
+   - *Diff-berättande:* boten narrerar förändringar i stället för tysta
+     reposter — "🔓 Se liberan 3 plazas para las 11'00 (bajas: peter, pepe
+     jaen, jesus)". Idag är hål osynliga om man inte jämför två reposter.
+   - *Avhoppsburst-larm:* tappar en stängd/nästan full lista ≥2 spelare
+     larmas Paco direkt och boten föreslår en ny utfrågningsrunda.
+   - *Korsdirigering av reservas:* reserver på ett fullt pass erbjuds
+     automatiskt lediga platser i samma dags pass på samma nivå (belagt
+     behov: Edu G och Joanfranco köade på 9:30 medan elvan hade tre hål).
+   - *Veckoschema som konfig:* dag × tid × nivå (må 9:30 = cuarta alta,
+     lö 9:30 = tercera, ti fm = nivå 3-poolen …).
+   - *Identitet via nummer:* spelare identifieras på WhatsApp-nummer;
+     Pacos fritextalias ("Emilio" vs "emilio González") är visningsnamn,
+     aldrig nyckel.
 4. Avhopp → boten uppdaterar, lyfter reserva, ger Paco ny text + förslag på
    utrop.
 5. `sorteo` → banindelning som respekterar önskemål (bytesregister per spelare
