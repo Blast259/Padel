@@ -118,6 +118,18 @@ själva listredigeringen — är hans tyngsta osynliga arbete. Demons akt 3 visa
 numera exakt detta: boten känner tillgängligheten och ställer Pacos egen fråga
 privat, efter hans "dale".
 
+**Live-korroborering (Mikels 1:1 med Paco, 2026-08-02):** samma dag som
+analysen skrevs fick Mikel själv utfrågningen i realtid — *"Para mañana a las
+11'00 te apunto ?"* (kl 12:04; elvan, precis som förutsagt). När han tackade
+nej kom dessutom ett **motbud**: *"Por la tarde a las 18'00 podrías jugar
+mañana?"* — Paco korsförsäljer alltså andra pass vid nej (nytt botbeteende
+att spegla). Och för tisdagens nivå 3-pool syntes **grindvaktsfrasen**:
+*"E de mirar si hay hueco ok"* — inträde i poolen går via Pacos bedömning av
+"hueco", helt i linje med inre cirkeln-fyndet. (Även: ännu ett raderat
+Paco-meddelande, och 18'00 som ytterligare passtid.) Mikels processfråga till
+Paco — *"¿Cuándo abres la lista?"* — väntar på svar; det ger botens
+öppningsschema.
+
 ## Den inre cirkeln — stående platser (granskningsfynd, Mikel 2026-08-02)
 
 Mikels andra granskningsrunda avslöjade systemets sociala arkitektur:

@@ -13,6 +13,12 @@ förstärker som spelare ("it writes exactly like Paco"), och du överlämnar
 överraskningen. Koordinera tid med Mikel först, sedan Paco — och be Mikel
 hålla tyst om innehållet tills dess.
 
+**Tajmingplanen (Mikels förslag, 2026-08-02):** ni två försöker komma med i
+tisdagens nivå 3-pool (Mikel har redan frågat Paco: *"Me apuntaría con
+Tommy, el mismo sueco que hoy"*), spelar passet ihop — och pitchar Paco
+efteråt. Ett gemensamt pass samma morgon är den perfekta uppladdningen:
+Paco är på plats, på gott humör, och ni har just *upplevt* hans organisering.
+
 **Elvan-kortet (Mikels data):** 09:30 fyller sig själv — men *"Paco normally
 has to beg people to play at 11:00"*. Säg till Paco: assistenten tar över
 tiggandet — den vet vilka som är lediga och frågar dem privat med hans egen

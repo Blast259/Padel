@@ -69,6 +69,10 @@ Flöde per pass:
    platser → grupprop → privata frågor → och som sista steg ett **färdigt
    utkast till överflödesinlägg** för externa gruppen *PadelMar* som Paco
    postar själv — ingen automation i grupper han inte äger.
+   **Motbud vid nej (live-belagt):** när en spelare tackar nej erbjuder Paco
+   ett annat pass (*"Por la tarde a las 18'00 podrías jugar mañana?"*) —
+   boten gör detsamma: nej till ett pass ⇒ föreslå dagens/veckans andra
+   lediga pass på rätt nivå, och notera svaret i tillgänglighetsregistret.
 4. Avhopp → boten uppdaterar, lyfter reserva, ger Paco ny text + förslag på
    utrop.
 5. `sorteo` → banindelning som respekterar önskemål (bytesregister per spelare
