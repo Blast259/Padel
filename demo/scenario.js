@@ -2,21 +2,25 @@
  *
  * VIKTIGT om stilen: Pacos meddelanden och listformatet härmar medvetet hans
  * riktiga stil från gruppen — inklusive "stavfel" och ojämn numrering
- * ("1-machete✅", "4patiño✅", "q", "x privado", "9'30", "chic@s").
+ * ("1-machete✅", "3patiño✅", "q", "x privado", "9'30", "chic@s").
  * RÄTTA INTE dessa — de är poängen. Boten skriver däremot ren spanska.
  *
- * Filen förfinas mot den riktiga chattexporten (source/chat-export.txt) när
- * den finns — kör `npm run parse` och justera strängarna här.
+ * Verklighetsförankring (granskningsrundan med Mikel):
+ *  - 09:30-listan publiceras redan FÖRSÅDD med fijos (stammisarna) och
+ *    fylls på minuter — den sköter sig själv.
+ *  - 11:00 är det svårfyllda passet ("Paco has to beg") → nudge + privat
+ *    utfrågning riktas dit.
+ *  - Sen ankomst-scenen visar "falta X"-flödet + punktlighetsregistret.
  *
  * Beat-typer:
- *  {type:'title', key}                    aktkort (fullskärm), i18n-nyckel
- *  {type:'caption', key}                  berättartext i caption-baren, i18n-nyckel
- *  {type:'chat', id}                      växla aktiv chatt
- *  {type:'system', text}                  datum-pill (literal, ej i18n)
- *  {type:'msg', from, text, time, typing} chattbubbla; typing = ms "skriver…" före
- *  {type:'pause', ms}                     paus i autoplay (ignoreras i tap-läge)
- *  {type:'end'}                           slutkort + window.__DEMO_DONE
- *  chain:true                             limmas till föregående beat = ett tap
+ *  {type:'title', key, persist}          aktkort (fullskärm), i18n-nyckel
+ *  {type:'caption', key}                 berättartext, i18n-nyckel
+ *  {type:'chat', id}                     växla aktiv chatt
+ *  {type:'system', text}                 datum-pill (literal, ej i18n)
+ *  {type:'msg', from, text, time, typing} chattbubbla; typing = ms "skriver…"
+ *  {type:'pause', ms}                    paus i autoplay (ignoreras i tap-läge)
+ *  {type:'end'}                          slutkort + window.__DEMO_DONE
+ *  chain:true                            limmas till föregående beat = ett tap
  */
 window.PADEL_SCENARIO = (function () {
   'use strict';
@@ -76,86 +80,133 @@ window.PADEL_SCENARIO = (function () {
     pedrog:   { name: 'pedro gomez' },
     juang:    { name: 'Juan gonzalez' },
     pepej:    { name: 'pepe jaen' },
+    danis:    { name: 'Dani silva' },
+    pascal:   { name: 'pascal paci' },
     john:     { name: 'John' },
     tommy:    { name: 'Tommy' }
   };
 
-  /* Pacos rubrikblock — exakt som han skriver det */
-  var HEAD =
+  /* Pacos rubrikblock — exakt som han skriver dem */
+  var HEAD930 =
     'Pull sábado\n' +
     'Hora ‼️‼️9:30‼️‼️\n' +
     'Nivel tercera\n' +
     'Lugar fly';
 
-  var LIST_14 =
-    HEAD + '\n\n' +
-    '1-machete✅\n' +
-    '2 Gamez\n' +
-    '3- José Luis cañasveras✅\n' +
-    '4patiño✅\n' +
-    '5 tellez✅\n' +
-    '6- antonio martin✅\n' +
-    '7 chichi✅\n' +
-    '8 juan Córdoba✅\n' +
-    '9- domingo✅\n' +
-    '10 Miguel zamora✅\n' +
-    '11 borja✅\n' +
-    '12- loren✅\n' +
-    '13 marcos✅\n' +
-    '14 ale✅\n' +
-    '15\n' +
-    '16\n\n' +
-    'Reservas\n\n' +
-    'Faltan 2 👉 "yo"';
+  var HEAD1100 =
+    'Pull sábado\n' +
+    "Hora 11'00\n" +
+    'Lugar padelfly\n' +
+    'Nivel cuarta alta';
 
-  var LIST_16 =
-    HEAD + '\n\n' +
+  /* Fijos-stommen för 9:30 — publiceras redan ifylld (Mikels fynd) */
+  var FIJOS930 =
     '1-machete✅\n' +
-    '2 Gamez\n' +
-    '3- José Luis cañasveras✅\n' +
-    '4patiño✅\n' +
-    '5 tellez✅\n' +
-    '6- antonio martin✅\n' +
-    '7 chichi✅\n' +
-    '8 juan Córdoba✅\n' +
-    '9- domingo✅\n' +
-    '10 Miguel zamora✅\n' +
-    '11 borja✅\n' +
-    '12- loren✅\n' +
-    '13 marcos✅\n' +
+    '2 José Luis cañasveras✅\n' +
+    '3patiño✅\n' +
+    '4 tellez✅\n' +
+    '5- antonio martin✅\n' +
+    '6 chichi✅\n' +
+    '7- juan Córdoba✅\n' +
+    '8 domingo✅\n' +
+    '9- Miguel zamora✅\n' +
+    '10 borja✅\n' +
+    '11- loren✅\n' +
+    '12 marcos✅';
+
+  /* Utropet: dagens BÅDA pass i ett meddelande, som Paco gör på riktigt */
+  var ANNOUNCE =
+    HEAD930 + '\n\n' +
+    FIJOS930 + '\n' +
+    '13\n14\n15\n16\n\n' +
+    'Reservas\n\n' +
+    '————————\n\n' +
+    HEAD1100 + '\n\n' +
+    '1-paolo\n' +
+    '2- gabrielle\n' +
+    '3-checho\n' +
+    '4- Jose Villalobos\n' +
+    '5-pepe Lucena\n' +
+    '6-Compi de pepe lucena\n' +
+    '7-\n8-\n9-\n10-\n11-\n12-\n\n' +
+    'Reservas\n\n' +
+    'Para apuntarse: responder "yo"';
+
+  var L930_GAMEZ =
+    'Pull sábado 9:30 — fly\n\n' +
+    FIJOS930 + '\n' +
+    '13 Gamez\n' +
+    '14\n15\n16\n\n' +
+    'Quedan 3 👉 "yo"';
+
+  var L930_FULL =
+    'Pull sábado 9:30 — fly\n\n' +
+    FIJOS930 + '\n' +
+    '13 Gamez\n' +
     '14 ale✅\n' +
     '15 franco✅\n' +
     '16 pedro gomez✅\n\n' +
-    'Reservas\n' +
-    'Juan gonzalez\n' +
-    'pepe jaen\n\n' +
     '🔒 PULL CERRADA — 4 pistas\n' +
     'Nos vemos en fly 🎾';
 
+  var L1100_10 =
+    HEAD1100 + '\n\n' +
+    '1-paolo\n' +
+    '2- gabrielle\n' +
+    '3-checho\n' +
+    '4- Jose Villalobos\n' +
+    '5-pepe Lucena\n' +
+    '6-Compi de pepe lucena\n' +
+    '7- Grego\n' +
+    '8-eric\n' +
+    '9- ola\n' +
+    '10 ole\n' +
+    '11-\n12-\n\n' +
+    'Reservas\n\n' +
+    'Faltan 2 👉 "yo"';
+
+  var L1100_FULL =
+    "Pull sábado 11'00 — padelfly\n\n" +
+    '1-paolo\n' +
+    '2- gabrielle\n' +
+    '3-checho\n' +
+    '4- Jose Villalobos\n' +
+    '5-pepe Lucena\n' +
+    '6-Compi de pepe lucena\n' +
+    '7- Grego\n' +
+    '8-eric\n' +
+    '9- ola\n' +
+    '10 ole\n' +
+    '11 Dani silva✅\n' +
+    '12 pascal paci✅\n\n' +
+    '🔒 PULL CERRADA — 3 pistas\n' +
+    'Nos vemos en padelfly 🎾';
+
+  /* 9:30-listan efter chichis avhopp: 1º reserva in (ny fijos-ordning) */
   var LIST_PROMOTED =
     'chichi se cae ➡️ entra Juan gonzalez (1º reserva) ✅\n\n' +
-    HEAD + '\n\n' +
+    'Pull sábado 9:30 — fly\n\n' +
     '1-machete✅\n' +
-    '2 Gamez✅\n' +
-    '3- José Luis cañasveras✅\n' +
-    '4patiño✅\n' +
-    '5 tellez✅\n' +
-    '6- antonio martin✅\n' +
-    '7 Juan gonzalez✅\n' +
-    '8 juan Córdoba✅\n' +
-    '9- domingo✅\n' +
-    '10 Miguel zamora✅\n' +
-    '11 borja✅\n' +
-    '12- loren✅\n' +
-    '13 marcos✅\n' +
+    '2 José Luis cañasveras✅\n' +
+    '3patiño✅\n' +
+    '4 tellez✅\n' +
+    '5- antonio martin✅\n' +
+    '6 Juan gonzalez✅\n' +
+    '7- juan Córdoba✅\n' +
+    '8 domingo✅\n' +
+    '9- Miguel zamora✅\n' +
+    '10 borja✅\n' +
+    '11- loren✅\n' +
+    '12 marcos✅\n' +
+    '13 Gamez✅\n' +
     '14 ale✅\n' +
     '15 franco✅\n' +
     '16 pedro gomez✅\n\n' +
     'Reservas\n' +
     'pepe jaen';
 
-  /* Pista-blocken följer Pacos riktiga lottningsformat från gruppen:
-   * "Pista N" + ett par per rad ("Spelare - Spelare"). */
+  /* Pista-blocken följer Pacos riktiga lottningsformat:
+   * "Pista N" + ett par per rad. Paren är Pacos — slumpen sätter startbanor. */
   var SORTEO =
     "Pull sábado 9'30\n\n" +
     'Pista 1\n' +
@@ -190,15 +241,15 @@ window.PADEL_SCENARIO = (function () {
     'Ganadores suben ⬆️ · perdedores bajan ⬇️\n' +
     'A 6 juegos → ¡tiempo! · empate → punto de oro';
 
-  /* Dagens två pass i denna grupp: 9:30 (tercera) + 11:00 (cuarta alta),
-   * samma hall (fly = Padelfly). 11:00 utökad till 3 pistas som i verkligheten. */
+  /* Dagens två pass + punktlighetsraden (Mikels förslag, privat för Paco) */
   var RESUMEN =
     '📊 Resumen — sábado\n\n' +
     '🎾 Pulls organizadas: 2\n' +
     '· 9:30 tercera fly — 16/16 ✅\n' +
-    '· 11:00 cuarta alta fly — 12/12 ✅ (ampliada a 3 pistas)\n\n' +
+    '· 11:00 cuarta alta fly — 12/12 ✅\n\n' +
     '👥 Jugadores hoy: 28\n' +
     '🆕 Nuevos: 2 (John 🇬🇧, Tommy 🇸🇪)\n' +
+    '⏱️ Retrasos: 1 (patiño — avisado 🙃)\n' +
     '💶 Comisión estimada: 28 € (ej. 1 €/jugador)\n\n' +
     '📅 Domingo 9.00 a 11.00 — 16/16 🔒\n\n' +
     'Buenas noches jefe 😴';
@@ -208,77 +259,70 @@ window.PADEL_SCENARIO = (function () {
     /* ─── AKT 0: intro ─── */
     { type: 'title', key: 'title.intro' },
 
-    /* ─── AKT 1: Paco skapar pullen (1:1 med boten) ─── */
+    /* ─── AKT 1: Paco skapar BÅDA passen (1:1 med boten) ─── */
     { type: 'caption', key: 'cap.create' },
     { type: 'chat', id: 'botPaco', chain: true },
     { type: 'system', text: 'viernes', chain: true },
-    { type: 'msg', from: 'paco', time: '18:47', text: "pull sabado 9'30 tercera fly 16" },
+    { type: 'msg', from: 'paco', time: '18:47', text:
+      "pull sabado\n9'30 tercera fly 16\n11'00 cuarta alta 12" },
     { type: 'msg', from: 'bot', time: '18:47', typing: 1400, text:
-      '✅ Creada. La publico en el grupo 👇\n\n' + HEAD + '\n\n' +
-      'Para apuntarse: responder "yo"' },
+      '✅ Creadas las dos. Los fijos ya están dentro.\nLa publico en el grupo 👇' },
     { type: 'pause', ms: 1200 },
 
-    /* ─── AKT 2: gruppen fylls ─── */
-    { type: 'caption', key: 'cap.group' },
+    /* ─── AKT 2: utropet — 9:30 redan försådd, fylls på minuter ─── */
+    { type: 'caption', key: 'cap.fijos' },
     { type: 'chat', id: 'group', chain: true },
     { type: 'system', text: 'viernes', chain: true },
-    { type: 'msg', from: 'bot', time: '18:48', text:
-      HEAD + '\n\n' + 'Para apuntarse: responder "yo"' },
+    { type: 'msg', from: 'bot', time: '18:48', text: ANNOUNCE },
+    { type: 'pause', ms: 2200 },
     { type: 'msg', from: 'paco', time: '18:50', text: "Venga apuntaros para las 9'30 gracias" },
-
-    { type: 'caption', key: 'cap.yo' },
-    { type: 'msg', from: 'machete', time: '18:52', text: 'yo', chain: true },
-    { type: 'msg', from: 'bot', time: '18:52', text:
-      'Pull sábado 9:30 — fly\n\n1-machete✅\n\nQuedan 15 plazas 👉 "yo"' },
 
     { type: 'caption', key: 'cap.obey' },
     { type: 'msg', from: 'paco', time: '18:55', text: 'apunta a gamez q me lo dijo x privado', chain: true },
-    { type: 'msg', from: 'bot', time: '18:55', text:
-      'Pull sábado 9:30 — fly\n\n1-machete✅\n2 Gamez\n\nQuedan 14 plazas 👉 "yo"' },
+    { type: 'msg', from: 'bot', time: '18:55', text: L930_GAMEZ },
 
-    { type: 'msg', from: 'joseluis', time: '18:57', text: 'Yoo' },
-    { type: 'msg', from: 'patino', time: '18:58', text: 'yo ✅', chain: true },
-    { type: 'msg', from: 'tellez', time: '18:58', text: 'yo', chain: true },
-    { type: 'msg', from: 'antonio', time: '19:01', text: 'voy', chain: true },
-    { type: 'msg', from: 'chichi', time: '19:02', text: 'yo!' },
-    { type: 'caption', key: 'cap.pain', chain: true },
-    { type: 'msg', from: 'bot', time: '19:02', text:
-      'Pull sábado 9:30 — fly\n\n' +
-      '1-machete✅\n2 Gamez\n3- José Luis cañasveras✅\n4patiño✅\n' +
-      '5 tellez✅\n6- antonio martin✅\n7 chichi✅\n\n' +
-      'Quedan 9 plazas 👉 "yo"' },
-    { type: 'pause', ms: 1600 },
-
-    { type: 'caption', key: 'cap.later' },
-    { type: 'msg', from: 'bot', time: '21:03', text: LIST_14, chain: true },
+    { type: 'caption', key: 'cap.yo' },
+    { type: 'msg', from: 'ale', time: '18:57', text: 'yo', chain: true },
+    { type: 'msg', from: 'franco', time: '19:01', text: 'yo', chain: true },
+    { type: 'msg', from: 'pedrog', time: '19:02', text: 'yo✅' },
+    { type: 'caption', key: 'cap.fijosFull', chain: true },
+    { type: 'msg', from: 'bot', time: '19:02', typing: 1400, text: L930_FULL },
     { type: 'pause', ms: 2200 },
 
-    /* ─── AKT 3: nudge + stängning ─── */
+    { type: 'msg', from: 'juang', time: '20:41', text: 'yo' },
+    { type: 'msg', from: 'bot', time: '20:41', text:
+      "Completa la de las 9'30 ✋ — Juan gonzalez 1º reserva ✅", chain: true },
+    { type: 'msg', from: 'pepej', time: '20:44', text: 'si hay hueco yo' },
+    /* Pacos välkomstritual för nya i gruppen — direkt ur chatten */
+    { type: 'msg', from: 'paco', time: '20:44', text: 'Bienvenido al grupo pepe' },
+    { type: 'msg', from: 'bot', time: '20:45', text: 'pepe jaen 2º reserva ✅', chain: true },
+    { type: 'pause', ms: 1400 },
+
+    /* ─── AKT 3: elvan — passet Paco annars får tigga ihop ─── */
+    { type: 'caption', key: 'cap.later' },
+    { type: 'msg', from: 'bot', time: '21:03', text: L1100_10, chain: true },
+    { type: 'pause', ms: 2200 },
+
     { type: 'caption', key: 'cap.nudge' },
-    /* Pacos literala fras ur chatten (chic@s, 9'30, emoji-klustret) */
+    /* Pacos literala fras ur chatten — den gällde just 11'00 */
     { type: 'msg', from: 'bot', time: '21:15', typing: 1200, text:
-      "Venga chic@s dos más para cerrar la pull de las 9'30 vamos 💪🏻🎾🎾💪🏻" },
+      "Venga chic@s dos más para cerrar la pull de las 11'00 vamos 💪🏻🎾🎾💪🏻" },
 
     /* Pacos tyngsta osynliga jobb: fråga spelare privat, en och en
-     * ("Puedes jugar mañana a las 11'00?" — literal fras ur hans 1:1-chatt).
-     * Boten känner tillgängligheten och frågar åt honom — efter hans "dale". */
+     * ("¿Puedes jugar mañana a las 11'00?" — literal fras ur hans 1:1-chatt). */
     { type: 'caption', key: 'cap.outreach' },
     { type: 'chat', id: 'botPaco', chain: true },
     { type: 'msg', from: 'bot', time: '21:16', typing: 1400, text:
-      "Siguen faltando 2 para las 9'30 ⚠️\n" +
-      'Disponibles hoy: franco y pedro gomez\n' +
-      '¿Les pregunto en privado? («¿Puedes jugar mañana?»)' },
+      "Siguen faltando 2 para las 11'00 ⚠️\n" +
+      'Disponibles hoy: Dani silva y pascal paci\n' +
+      "¿Les pregunto en privado? («¿Puedes jugar mañana a las 11'00?»)" },
     { type: 'msg', from: 'paco', time: '21:17', text: 'dale 👍' },
     { type: 'caption', key: 'cap.outreachDone' },
     { type: 'chat', id: 'group', chain: true },
-    { type: 'msg', from: 'franco', time: '21:18', text: 'yo', chain: true },
-    { type: 'msg', from: 'pedrog', time: '21:19', text: 'yo✅', chain: true },
-    { type: 'msg', from: 'juang', time: '21:20', text: 'yo' },
-    { type: 'msg', from: 'pepej', time: '21:21', text: 'si hay hueco yo' },
-    /* Pacos välkomstritual för nya i gruppen — direkt ur chatten */
-    { type: 'msg', from: 'paco', time: '21:21', text: 'Bienvenido al grupo pepe' },
+    { type: 'msg', from: 'danis', time: '21:18', text: 'yo', chain: true },
+    { type: 'msg', from: 'pascal', time: '21:19', text: 'voy' },
     { type: 'caption', key: 'cap.closed', chain: true },
-    { type: 'msg', from: 'bot', time: '21:21', typing: 1400, text: LIST_16 },
+    { type: 'msg', from: 'bot', time: '21:19', typing: 1400, text: L1100_FULL },
     { type: 'pause', ms: 2600 },
 
     /* ─── AKT 4: avhopp → reserva lyfts ─── */
@@ -301,6 +345,15 @@ window.PADEL_SCENARIO = (function () {
     { type: 'caption', key: 'cap.sorteo', chain: true },
     { type: 'msg', from: 'bot', time: '8:27', typing: 2000, text: SORTEO },
     { type: 'pause', ms: 2800 },
+
+    /* ─── AKT 5b: sen till pullen — "falta X"-flödet (Mikels förslag) ─── */
+    { type: 'caption', key: 'cap.late' },
+    { type: 'msg', from: 'miguelz', time: '9:31', text: 'falta patiño en pista 1', chain: true },
+    { type: 'msg', from: 'bot', time: '9:31', text: 'Le escribo 👍' },
+    { type: 'caption', key: 'cap.lateChase' },
+    { type: 'msg', from: 'bot', time: '9:33', typing: 1400, text:
+      'patiño: «llego en 5 min» 🏃\nEmpezad — entra al llegar', chain: true },
+    { type: 'pause', ms: 2000 },
 
     /* ─── AKT 6: resultat → vinnarbanan rond 2 ─── */
     { type: 'caption', key: 'cap.results' },

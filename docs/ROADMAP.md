@@ -113,6 +113,29 @@ färdig morgonresumé i stället för fyrtio notiser. Samma granskning gav ocks�
 valideringen *"It writes exactly like Paco"* — formathärmningen fungerar på
 folk som känner honom.
 
+### Puntualidad — sena ankomster & no-shows (granskningsfynd, Mikel)
+
+*"Paco is constantly moaning at people who do this. … He's often not around
+at the exact time the pull starts and everything falls apart."* Design:
+
+1. **Incheckningsping:** ~45 min före start pingar assistenten varje listad
+   spelare 1:1 (*"Pull 9'30 en fly — ¿confirmas? 👍"*). Obesvarat vid T-20 →
+   assistenten förvarnar Paco och värmer första reserven (*"puede liberarse
+   una plaza — ¿estás cerca?"*).
+2. **"Falta X"-flödet:** vid starttid kan vem som helst på listan skriva
+   `falta patiño` — assistenten jagar den sena **privat** (inte i gruppen),
+   rapporterar ETA tillbaka ("llego en 5"), och föreslår omstart av
+   rotationen eller reservinhopp om svar uteblir inom N minuter. Det löser
+   kärnproblemet: koordineringen fungerar även när Paco inte är på plats.
+3. **Punktlighetsregister (Mikels "late persons ranking"):** förseningar och
+   no-shows loggas — **synligt endast för Paco**, aldrig offentligt (ingen
+   grupputskämning; det skulle förgifta stämningen). Konsekvenserna är Pacos
+   verktyg, inte botens: återfallare kan erbjudas plats sist, hamna efter
+   fijos i prioritet eller krävas på tidigare bekräftelse. Registret är
+   spegelbilden av fijos-registret — samma prioritetsmaskineri, andra
+   riktningen — och en rad i kvällsresumén ("⏱️ Retrasos hoy: …") håller
+   Paco informerad utan att han behövt vara där.
+
 ### Steg 2 (om Paco vill mer)
 
 - **Knappar/listor i 1:1** (interaktiva meddelanden i Cloud API) för "yo",

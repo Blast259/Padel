@@ -292,7 +292,12 @@ framtida botfunktion ("reservas fylls på → föreslå en tredje pista"), och
 Ur första granskningsrundan (Mikel, 2026-08-02) dessutom: **meddelanden
 dygnet runt** — Paco klagar återkommande på folk som skriver kl. 02 —
 adresseras av beredskapsläget i ROADMAP.md (boten sover aldrig; Paco vaknar
-till en resumé i stället för notisstormen).
+till en resumé i stället för notisstormen). Och: **sena ankomster/no-shows**
+— "Paco is constantly moaning at people who do this"; när någon är sen
+klagas det i gruppen, och Paco är ofta inte på plats vid starttid, "and
+everything falls apart" → incheckningsping, "falta X"-flöde och ett privat
+punktlighetsregister (se ROADMAP.md, *Puntualidad*; visas i demons sen
+ankomst-scen).
 
 ## Kvarstående öppna frågor
 
