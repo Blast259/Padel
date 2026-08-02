@@ -206,6 +206,12 @@ Söndagens reposter av måndagslistorna (Padelfly) blottade tre nya mönster:
    hall, *samma nivå* (cuarta alta). Ingen dirigerade dem dit. Manuell
    hantering ser inte tvärs över passen.
 
+4. **Tvetydiga anmälningar (Mikels observation):** med två öppna listor i
+   samma tråd är ett naket «yo» omöjligt att placera säkert — idag löser
+   Paco det med tolkning eller en följdfråga. Botens regelverk (kontext →
+   enda öppna → nivå → enordsfråga) ligger i ROADMAP.md och visas i demons
+   akt 2.
+
 Dessutom: fler redigeringsartefakter (`8-,` och `,theo`) och **namnkollisioner**
 — *"Emilio"* (elvan) vs *"emilio González"* (nian), *"Eduardo ( Santi)"* vs
 *"Edu G"* vs *"santi"*. Pacos register är socialt; en bot skiljer personer på

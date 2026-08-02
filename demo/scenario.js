@@ -282,16 +282,22 @@ window.PADEL_SCENARIO = (function () {
     { type: 'msg', from: 'bot', time: '18:55', text: L930_GAMEZ },
 
     { type: 'caption', key: 'cap.yo' },
+    /* Tvetydigt "yo" med två öppna pulls (Mikels fynd): boten frågar —
+     * en enordsfråga, precis som Paco skulle. Övriga anger passet själva. */
     { type: 'msg', from: 'ale', time: '18:57', text: 'yo', chain: true },
-    { type: 'msg', from: 'franco', time: '19:01', text: 'yo', chain: true },
-    { type: 'msg', from: 'pedrog', time: '19:02', text: 'yo✅' },
+    { type: 'msg', from: 'bot', time: '18:57', text: "¿Para las 9'30 o las 11'00? 😊" },
+    { type: 'caption', key: 'cap.disambig', chain: true },
+    { type: 'msg', from: 'ale', time: '18:58', text: "9'30" },
+    { type: 'msg', from: 'franco', time: '19:01', text: "yo a las 9'30", chain: true },
+    { type: 'msg', from: 'pedrog', time: '19:02', text: "yo 9'30✅" },
     { type: 'caption', key: 'cap.fijosFull', chain: true },
     { type: 'msg', from: 'bot', time: '19:02', typing: 1400, text: L930_FULL },
     { type: 'pause', ms: 2200 },
 
-    { type: 'msg', from: 'juang', time: '20:41', text: 'yo' },
+    { type: 'msg', from: 'juang', time: '20:41', text: "yo 9'30" },
     { type: 'msg', from: 'bot', time: '20:41', text:
-      "Completa la de las 9'30 ✋ — Juan gonzalez 1º reserva ✅", chain: true },
+      "Completa la de las 9'30 ✋ — Juan gonzalez 1º reserva ✅\n" +
+      "¿Te apunto también a las 11'00? Quedan plazas", chain: true },
     { type: 'msg', from: 'pepej', time: '20:44', text: 'si hay hueco yo' },
     /* Pacos välkomstritual för nya i gruppen — direkt ur chatten */
     { type: 'msg', from: 'paco', time: '20:44', text: 'Bienvenido al grupo pepe' },

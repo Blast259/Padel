@@ -65,6 +65,12 @@ Flöde per pass:
    (belagt i 1:1-chatten med Tommy). ✅-markören sätter boten automatiskt när
    spelaren själv bekräftat (i grupp eller 1:1) — det ersätter Pacos manuella
    verifieringsrunda, som idag är han ensam om (Tommys uppgift).
+   **Tvetydiga «yo» (granskningsfynd, Mikel):** med flera öppna pass i samma
+   tråd tolkar boten anmälningar i fast ordning: (1) svar tätt efter ett
+   utrop/nudge räknas till det utropade passet, (2) bara ett pass öppet →
+   dit, (3) spelarens nivå/historik avgör, (4) fortfarande oklart → en
+   enordsfråga («¿9'30 u 11'00?»). Aldrig gissning — samma fråga Paco
+   ställer idag, bara snabbare.
    **Eskalationstrappan** speglar Pacos belagda beteende hela vägen: stående
    platser → grupprop → privata frågor → och som sista steg ett **färdigt
    utkast till överflödesinlägg** för externa gruppen *PadelMar* som Paco
