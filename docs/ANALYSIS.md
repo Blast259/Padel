@@ -111,7 +111,30 @@ själva listredigeringen — är hans tyngsta osynliga arbete. Demons akt 3 visa
 numera exakt detta: boten känner tillgängligheten och ställer Pacos egen fråga
 privat, efter hans "dale".
 
-## Vinnarbanan-reglerna (bekräftade av Tommy)
+## Den inre cirkeln — stående platser (granskningsfynd, Mikel 2026-08-02)
+
+Mikels andra granskningsrunda avslöjade systemets sociala arkitektur:
+
+- Det finns en **inre cirkel av stammisar** med fasta veckomönster — vissa
+  spelar varje dag, andra mån/ons/fre, andra bara tisdag förmiddag.
+  **Tisdag förmiddag är nivå 3-poolen och märkbart mer krävande** än övriga
+  dagar — veckodagarna har alltså egna nivåidentiteter och egna stammisgäng.
+- Stammisarna ser platsen som självklar (*"God given right"*): de hamnar på
+  listan **utan att göra något** — eller via direktkontakt med Paco. Exakt
+  hur "the magical inner circle" fungerar vet inte ens spelarna — den bor i
+  Pacos huvud.
+- **Adoptionsrisk:** tvingas stammisarna skriva "yo" som alla andra upplevs
+  det som en degradering — och det är de mest inflytelserika spelarna.
+
+**Designkonsekvens (redan förenlig med grundprincipen, nu explicit):**
+1. **"Fijos"-register** — stående platser per veckomönster. Boten försår
+   listan med stammisarna *innan* publicering, precis som Paco gör idag.
+   De gör ingenting och står ändå med; avbokning är opt-out ("me caigo"),
+   inte opt-in.
+2. **Hierarkin förblir osynlig och Paco-ägd.** Inga nivåer/etiketter syns
+   utåt — listan dyker bara upp med de vanliga namnen redan ifyllda, som
+   alltid. Direktkanalen till Paco fortsätter fungera: han säger "apunta a X"
+   och boten lyder (Gamez-scenen i demon är exakt detta).
 
 - **Fasta par** hela passet — paret rör sig tillsammans, inga partnerbyten
   (till skillnad från americano).

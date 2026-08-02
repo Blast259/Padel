@@ -43,6 +43,13 @@ Flöde per pass:
 2. Boten svarar med färdigformaterad lista (Pacos exakta mall) → Paco postar i
    gruppen. Vid varje förändring: uppdaterad text att klistra in (eller så
    postar Paco 2–3 ggr/dag i stället för 15).
+   **Fijos/stående platser (granskningsfynd):** listan försås automatiskt med
+   den inre cirkelns stammisar enligt deras veckomönster (varje dag,
+   mån/ons/fre, "tisdagspoolen" …) *innan* publicering — de gör ingenting och
+   står ändå med, avbokning är opt-out ("me caigo"). Hierarkin syns aldrig
+   utåt och ägs av Paco: registret är bara en kodifiering av det han redan
+   gör när han försår sina listor, och "apunta a X" från honom går alltid
+   före allt.
 3. Spelare som vill slippa gruppbruset kan skriva "yo" direkt till boten
    (numret sprids via gruppbeskrivningen/en fastnålad rad i listan). Turister
    får svar på sitt språk — botens NLU är flerspråkig (es/en/sv).
@@ -131,6 +138,9 @@ folk som känner honom.
 
 1. **Adoption (störst):** lösningen får aldrig kräva att Paco ändrar sin metod.
    → 1:1-sekreteraren är additiv; PRESENTER.md:s pitch bygger på det.
+   Delrisken **inre cirkeln** (Mikel): tvingas stammisarna anmäla sig som
+   alla andra upplevs det som en degradering. → Fijos-registret ovan: de gör
+   ingenting och står ändå med, och direktkanalen till Paco fortsätter gälla.
 2. **Meta ändrar regler/priser:** → all logik ligger i egen backend;
    WhatsApp-lagret är tunt och utbytbart.
 3. **Nummer/verifiering:** Cloud API kräver ett företagsnummer (inte Pacos
