@@ -103,10 +103,16 @@
     fbList: document.getElementById('fb-list'),
     fbSend: document.getElementById('fb-send'),
     fbCopy: document.getElementById('fb-copy'),
-    hudFeedback: document.getElementById('hud-feedback')
+    hudFeedback: document.getElementById('hud-feedback'),
+    hudVersion: document.getElementById('hud-version')
   };
 
+  /* Versionsstämpel: injiceras av scripts/build-artifact.mjs vid publicering
+   * (git-baserad, kan inte glömmas bort). Lokalt/okompilerat visas "dev". */
+  var VERSION = window.PADEL_VERSION || 'dev';
+
   function initChrome() {
+    el.hudVersion.textContent = VERSION;
     el.sbIcons.innerHTML = ICON.signal + '<span class="sb-4g">4G</span>' + ICON.battery;
     el.hdrBack.innerHTML = ICON.back;
     el.hdrIcons.innerHTML = ICON.video + ICON.phone + ICON.kebab;
@@ -134,7 +140,7 @@
       el.landingBody.textContent = t('landing.body');
       el.landingFeedback.textContent = t('landing.feedback');
       el.landingStart.textContent = t('landing.start');
-      el.landingFoot.textContent = t('landing.foot');
+      el.landingFoot.textContent = t('landing.foot') + ' · ' + VERSION;
     }
     if (el.fbPanel) fbApplyLang();
   }

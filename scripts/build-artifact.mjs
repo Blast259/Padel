@@ -8,8 +8,18 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execSync } from 'node:child_process';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+
+/* Versionsstämpel från git — löpnummer + hash, kan aldrig glömmas bort.
+ * OBS: committa demo-ändringarna FÖRE bygget så att stämpeln blir rätt. */
+let version = 'dev';
+try {
+  const n = execSync('git rev-list --count HEAD', { cwd: ROOT }).toString().trim();
+  const sha = execSync('git rev-parse --short HEAD', { cwd: ROOT }).toString().trim();
+  version = `v${n} (${sha})`;
+} catch { /* utanför git → 'dev' */ }
 const DEMO = join(ROOT, 'demo');
 const outPath = resolve(process.argv[2] || join(ROOT, 'out', 'asistente-demo.html'));
 
@@ -26,7 +36,8 @@ const markup = bodyMatch[1].replace(/^\s*<script src="[^"]+"><\/script>\s*$/gm, 
 const out = [
   '<title>Asistente de Paco 🎾</title>',
   '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
-  '<!-- Demo privada · no afiliada a WhatsApp · byggd från demo/ i repot -->',
+  `<!-- Demo privada · no afiliada a WhatsApp · ${version} · byggd från demo/ i repot -->`,
+  `<script>window.PADEL_VERSION=${JSON.stringify(version)};</script>`,
   '<style>\n' + css + '\n</style>',
   markup,
   ...scripts.map(s => '<script>\n' + s + '\n</script>')
@@ -34,4 +45,4 @@ const out = [
 
 mkdirSync(dirname(outPath), { recursive: true });
 writeFileSync(outPath, out);
-console.log(`✔ ${outPath} (${(out.length / 1024).toFixed(0)} kB)`);
+console.log(`✔ ${outPath} (${(out.length / 1024).toFixed(0)} kB) — ${version}`);

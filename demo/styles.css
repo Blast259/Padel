@@ -522,6 +522,14 @@ body.record.has-caption .screen { padding-bottom: 8.6rem; }
   opacity: .9;
 }
 .hud-chip.active { background: var(--wa-accent); opacity: 1; }
+.hud-version {
+  pointer-events: none;
+  opacity: .65;
+  font-size: .58rem;
+  font-weight: 600;
+  padding: .2rem .45rem;
+  letter-spacing: .02em;
+}
 #tap-hint {
   position: absolute;
   bottom: 4.3rem;
