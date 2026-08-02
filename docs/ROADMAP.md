@@ -82,6 +82,15 @@ vidarebefordrar den uppdaterade versionen in i gruppen. 1:1-sekreteraren
 ändrar alltså inte hans beteende över huvud taget; den byter bara ut källan
 han vidarebefordrar ifrån mot en som alltid har listan färdig och korrekt.
 
+### Beredskapsläge (första granskningsfeedbacken, Mikel 2026-08-02)
+
+Assistenten håller ställningarna när Paco är otillgänglig — sover, står på
+banan, kör bil, är sjuk: den tar emot anmälningar, svarar på frågor på
+spelarens språk, lyfter reserver vid avhopp, och **köar allt som kräver
+beslut** till Paco är tillbaka. Ambitionsnivån görs ställbar per funktion
+(förslag ↔ autopilot), så Paco själv väljer hur mycket som får ske utan hans
+"dale". Inget publiceras någonsin i hans namn utan honom.
+
 ### Steg 2 (om Paco vill mer)
 
 - **Knappar/listor i 1:1** (interaktiva meddelanden i Cloud API) för "yo",
