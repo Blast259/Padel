@@ -49,7 +49,11 @@ Flöde per pass:
    står ändå med, avbokning är opt-out ("me caigo"). Hierarkin syns aldrig
    utåt och ägs av Paco: registret är bara en kodifiering av det han redan
    gör när han försår sina listor, och "apunta a X" från honom går alltid
-   före allt.
+   före allt. Dimensionering (Mikel): 09:30-poolen är i praktiken helfijos
+   (~16 stående platser, publiceras nära full), medan **11:00 är det
+   svårfyllda passet där Paco tigger folk** — utfrågningsmotorn,
+   tillgänglighetsregistret och turistinflödet ska därför riktas mot
+   11:00-typens pass. Det är där assistenten skapar ny intäkt.
 3. Spelare som vill slippa gruppbruset kan skriva "yo" direkt till boten
    (numret sprids via gruppbeskrivningen/en fastnålad rad i listan). Turister
    får svar på sitt språk — botens NLU är flerspråkig (es/en/sv).

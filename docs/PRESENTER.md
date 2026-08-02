@@ -4,14 +4,19 @@ Målet är inte att visa teknik — det är att Paco ska känna **"den här för
 hur jag jobbar"** inom 30 sekunder. Allt i demon är byggt kring hans eget
 format, hans egna fraser och hans spelares riktiga smeknamn.
 
-## Ta med en tvåspråkig stammis
+## Ta med Mikel — han har tackat ja
 
-Om Mikel (10 år i området, spelar i gruppen, engelska/spanska) tackar ja:
-låt **honom** driva genomgången på spanska medan du står för gesten. Demon
-berättar sig själv på spanska (#es-länken), Mikel förstärker som spelare
-("it writes exactly like Paco"), och du överlämnar överraskningen. En
-stammis som säger *"vi skulle använda det här"* väger tyngre än varje
-argument. Boka Mikel innan du bokar Paco.
+Mikel (10 år i området, spelar i gruppen, engelska/spanska) har bekräftat
+att han sitter med. Låt **honom** driva genomgången på spanska medan du står
+för gesten: demon berättar sig själv på spanska (#es-länken), Mikel
+förstärker som spelare ("it writes exactly like Paco"), och du överlämnar
+överraskningen. Koordinera tid med Mikel först, sedan Paco — och be Mikel
+hålla tyst om innehållet tills dess.
+
+**Elvan-kortet (Mikels data):** 09:30 fyller sig själv — men *"Paco normally
+has to beg people to play at 11:00"*. Säg till Paco: assistenten tar över
+tiggandet — den vet vilka som är lediga och frågar dem privat med hans egen
+fras. Varje extra fylld elva-bana är pengar rakt i fickan.
 
 ## Före visningen (5 min förberedelse)
 

@@ -126,6 +126,17 @@ Mikels andra granskningsrunda avslöjade systemets sociala arkitektur:
 - **Adoptionsrisk:** tvingas stammisarna skriva "yo" som alla andra upplevs
   det som en degradering — och det är de mest inflytelserika spelarna.
 
+**Dimensionering (Mikel, uppföljning):** morgonens två pooler beter sig helt
+olika. **09:30 (4 banor/16 platser) är i praktiken helfijos** — "usually full
+or nearly full when the list is published and the same people are there
+every day" — listan publiceras alltså redan försådd, vilket bekräftar att
+stående platser är normen, inte undantaget. **11:00 är det svårfyllda
+passet:** "Paco normally has to beg people to play at 11:00", oftast bara
+2–3 banor. → Assistentens ekonomiska värde ligger inte i 09:30 (sköter sig
+självt) utan i att **fylla elvan**: tillgänglighetsregistret, de privata
+utfrågningarna och turistinflödet ska riktas dit. Varje extra fylld
+11:00-bana är ren ny intäkt för hallen och Paco.
+
 **Designkonsekvens (redan förenlig med grundprincipen, nu explicit):**
 1. **"Fijos"-register** — stående platser per veckomönster. Boten försår
    listan med stammisarna *innan* publicering, precis som Paco gör idag.
