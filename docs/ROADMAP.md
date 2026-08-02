@@ -65,6 +65,10 @@ Flöde per pass:
    (belagt i 1:1-chatten med Tommy). ✅-markören sätter boten automatiskt när
    spelaren själv bekräftat (i grupp eller 1:1) — det ersätter Pacos manuella
    verifieringsrunda, som idag är han ensam om (Tommys uppgift).
+   **Eskalationstrappan** speglar Pacos belagda beteende hela vägen: stående
+   platser → grupprop → privata frågor → och som sista steg ett **färdigt
+   utkast till överflödesinlägg** för externa gruppen *PadelMar* som Paco
+   postar själv — ingen automation i grupper han inte äger.
 4. Avhopp → boten uppdaterar, lyfter reserva, ger Paco ny text + förslag på
    utrop.
 5. `sorteo` → banindelning som respekterar önskemål (bytesregister per spelare

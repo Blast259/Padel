@@ -15,18 +15,25 @@
 - **Organisatör:** Paco. Han skapar spelen, jagar spelare, parar ihop, bokar
   banor på två hallar (**Padelfly**/"fly") och får en slant per organiserat
   spel → han vill maximera antalet fyllda pass.
-- **Kanal:** WhatsApp — **tre grupper** (alla drivna av Paco, samma nummer):
-  1. *PULL MAÑANERAS DE 3ª* (~520 medl.) — **Padelfly morgon**: 9:30
-     (tercera) + 11:00 (cuarta alta) i ett dubbelmeddelande *(bekräftat av
-     Tommy; "fly" = "padelfly" = samma hall)*.
-  2. *PULL Y PARTIDOS PADELFLY* (~505 medl.) — **Padelfly kväll**: pull
-     19'30 (12 platser = 3 banor) + **partido 21'00 (4 platser = en bana)**;
-     nivåspann som *"cuarta alta tercera baja"*.
+- **Kanal:** WhatsApp — **tre grupper** (alla drivna av Paco, samma nummer;
+  kartan oberoende bekräftad av Mikel, som är medlem i alla tre):
+  1. *PULL MAÑANERAS DE 3ª..4A* (~520 medl.) — **Padelfly morgon**: 9:30
+     (tercera) + 11:00 (cuarta alta) i ett dubbelmeddelande — gruppnamnets
+     nivåspann 3ª–4A förklarar varför båda nivåerna delar grupp *(bekräftat
+     av Tommy; "fly" = "padelfly" = samma hall)*.
+  2. *PULL Y PARTIDOS PADELFLY* (~505 medl.) — **Padelfly
+     eftermiddag/kväll**: pull 19'30 (12 platser = 3 banor) + **partido
+     21'00 (4 platser = en bana)**; nivåspann som *"cuarta alta tercera
+     baja"*; samma dynamik som morgongrupperna enligt Mikel.
   3. *Pull&partidos inmotions* — grannhallen **Inmotions**, morgon *och*
      kväll; skärmdump visar exakt samma pull-mall (12 platser, cuarta alta,
      alla ✅) → mallarna är portabla över hallar.
   Sammantaget: uppemot 5–6 pass per dag över tre grupper med ~1 500
-  medlemskap (med överlapp) — det är skalan på Pacos dagliga admin. Paco skickar även servicemeddelanden ("festivalen
+  medlemskap (med överlapp) — det är skalan på Pacos dagliga admin.
+- **Överflödeskanal (Mikel):** när spelare saknas postar Paco ibland i en
+  extern grupp han **inte** driver själv — *"PadelMar 🎾🎾🎾"*. Hans
+  eskalationstrappa för svårfyllda pass är alltså: stående platser → rop i
+  egna gruppen → privata frågor → externt inlägg i PadelMar. Paco skickar även servicemeddelanden ("festivalen
   ikväll, vägen från El Ingenio till Aldi är avstängd — ta andra vägar") och
   hälsar nya välkomna personligen: *"Bienvenido al grupo pepe"*.
 - **Spelform:** "pull" = vinnarbanan. 16 platser = 4 banor, 8 = 2 banor —
