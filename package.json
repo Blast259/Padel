@@ -8,7 +8,10 @@
     "demo": "npx --yes http-server demo -p 8080 -a 0.0.0.0 -c-1",
     "check": "node scripts/check-env.mjs",
     "record": "node scripts/record-video.mjs",
-    "parse": "node scripts/parse-export.mjs source/chat-export.txt"
+    "parse": "node scripts/parse-export.mjs source/chat-export.txt",
+    "bot:repl": "node bot/repl.js",
+    "bot:test": "node --test bot/bot.test.js",
+    "bot:serve": "node bot/server.js"
   },
   "devDependencies": {
     "ffmpeg-static": "^5.3.0"
