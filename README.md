@@ -45,7 +45,8 @@ konverteringskommandot skrivs ut.
 ```
 demo/       simulatorn (index.html, styles.css, app.js, scenario.js, i18n.js)
 scripts/    check-env.mjs · record-video.mjs · parse-export.mjs
-docs/       ANALYSIS.md (Pacos metod) · ROADMAP.md (vägen till riktig lösning) · PRESENTER.md (visningsmanus)
+docs/       ANALYSIS.md (Pacos metod) · ROADMAP.md (vägen till riktig lösning) · ARCHITECTURE.md (teknisk drift)
+            PRESENTER.md (visningsmanus) · PILOT.md (v1.0-piloten) · GUIA-PACO.md (Pacos instruktionskort)
 source/     gitignorerad plats för riktig chattexport (chat-export.txt)
 videos/     demo-es.mp4 · demo-sv.mp4 (slutleveranser)
 ```
